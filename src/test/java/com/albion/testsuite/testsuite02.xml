@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="TestAll">
+ 
+	<test name="order">
+		<packages>
+			<package name="com.albion.*" />
+		</packages>
+	</test>
+ 
+</suite>
