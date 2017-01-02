@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class MissingNumber {
 	
-	//0, 1, 2, 3 ... N
-	//0 + 1 + 2 + 3 = 6
+	//1, 2, 3 ... N
+	//1 + 2 + 3 = 6
     public int missingNumber(int[] nums) {
     	
     	Arrays.sort(nums);
