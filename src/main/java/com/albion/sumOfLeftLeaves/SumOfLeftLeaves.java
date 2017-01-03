@@ -15,18 +15,18 @@ public class SumOfLeftLeaves {
     public int sumOfLeftLeaves(TreeNode root) {
         if(root == null || root.left == null && root.right == null) return 0;
 
-        int res = 0;
+        int result = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
         while(!queue.isEmpty()) {
-            TreeNode curr = queue.poll();
+            TreeNode current = queue.poll();
 
-            if(curr.left != null && curr.left.left == null && curr.left.right == null) res += curr.left.val;
-            if(curr.left != null) queue.offer(curr.left);
-            if(curr.right != null) queue.offer(curr.right);
+            if(current.left != null && current.left.left == null && current.left.right == null) result += current.left.val;
+            if(current.left != null) queue.offer(current.left);
+            if(current.right != null) queue.offer(current.right);
         }
-        return res;
+        return result;
     }
 
     public int sumOfLeftLeavesV2(TreeNode root) {
