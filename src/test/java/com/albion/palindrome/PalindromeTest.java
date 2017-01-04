@@ -26,7 +26,7 @@ public class PalindromeTest {
             {"A man, a plan, a canal: Panama", true},
             {"abca", false},
             {"a", true},
-            {".,", false},
+            {".,", true},
             {"0P", false},
             {"a.", true}
 	};
