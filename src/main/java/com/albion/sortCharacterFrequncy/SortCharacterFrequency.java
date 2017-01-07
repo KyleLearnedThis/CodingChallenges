@@ -23,19 +23,14 @@ public class SortCharacterFrequency {
     }
     public String frequencySort(String s) {
         Map<String, Integer> map = makeFrequencyMap(s);
+        List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
 
-        List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
-        Collections.sort( list, new Comparator<Map.Entry<String, Integer>>() {
-            public int compare( Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2 )
-            {
-                return (o2.getValue()).compareTo( o1.getValue() );
-            }
-        });
-
+        //Sort in descending order
+        Collections.sort(list, (o1,o2)->(o2.getValue()).compareTo( o1.getValue()));
 
         Map<String, Integer> result = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : list) {
-            result.put( entry.getKey(), entry.getValue() );
+            result.put(entry.getKey(), entry.getValue());
         }
 
         StringBuilder sb = new StringBuilder();
