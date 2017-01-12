@@ -1,9 +1,12 @@
 package com.albion.maxdepth;
 
-import java.util.Stack;
-
 import com.albion.common.tree.TreeNode;
 
+import java.util.Stack;
+
+/**
+ * http://www.programcreek.com/2014/05/leetcode-maximum-depth-of-binary-tree-java/
+ */
 public class MaxDepth {
 
 	public int maxDepth(TreeNode<Integer> root) {
