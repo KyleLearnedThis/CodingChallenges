@@ -13,16 +13,16 @@ public class BinaryTreePathSumTest {
 
 	@DataProvider(name = "data")
 	public Object[][] makeTree() {
-		TreeNode<Integer> root = new TreeNode<Integer>(5);
-		TreeNode<Integer> t04a = new TreeNode<Integer>(4);
-		TreeNode<Integer> t08 = new TreeNode<Integer>(8);
-		TreeNode<Integer> t11 = new TreeNode<Integer>(11);
-		TreeNode<Integer> t13 = new TreeNode<Integer>(13);
-		TreeNode<Integer> t04b = new TreeNode<Integer>(4);
-		TreeNode<Integer> t07 = new TreeNode<Integer>(7);
-		TreeNode<Integer> t02 = new TreeNode<Integer>(2);
-		TreeNode<Integer> t05 = new TreeNode<Integer>(5);
-		TreeNode<Integer> t01 = new TreeNode<Integer>(1);
+		TreeNode<Integer> root = new TreeNode<>(5);
+		TreeNode<Integer> t04a = new TreeNode<>(4);
+		TreeNode<Integer> t08 = new TreeNode<>(8);
+		TreeNode<Integer> t11 = new TreeNode<>(11);
+		TreeNode<Integer> t13 = new TreeNode<>(13);
+		TreeNode<Integer> t04b = new TreeNode<>(4);
+		TreeNode<Integer> t07 = new TreeNode<>(7);
+		TreeNode<Integer> t02 = new TreeNode<>(2);
+		TreeNode<Integer> t05 = new TreeNode<>(5);
+		TreeNode<Integer> t01 = new TreeNode<>(1);
 		/*
 		 *    5
              / \
@@ -61,7 +61,7 @@ public class BinaryTreePathSumTest {
 	}
 	
 	@Test(dataProvider = "data")
-	public void testMatchingSum(TreeNode<Integer> root, int sum, ArrayList<ArrayList> expected ) {
+	public void testMatchingSum(TreeNode<Integer> root, int sum, ArrayList<ArrayList> expected) {
 
 		BinaryTreePrinter.printNode(root);
 		BinaryTreePathSum btps = new BinaryTreePathSum();
