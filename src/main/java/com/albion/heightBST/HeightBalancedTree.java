@@ -16,7 +16,7 @@ public class HeightBalancedTree {
 		}
 		
 		int mid = (high + low)/2;
-		TreeNode<Integer> cur = new TreeNode<Integer>(nums[mid]);
+		TreeNode<Integer> cur = new TreeNode<>(nums[mid]);
 		cur.left = sortedArrayToBST(nums, low, mid - 1);
 		cur.right = sortedArrayToBST(nums, mid + 1, high);
 		return cur;

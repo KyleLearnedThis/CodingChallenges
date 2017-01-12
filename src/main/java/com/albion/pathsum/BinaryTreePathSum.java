@@ -1,17 +1,16 @@
 package com.albion.pathsum;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.albion.common.tree.TreeNode;
 
+import java.util.ArrayList;
+
 public class BinaryTreePathSum {
-	public List<ArrayList<Integer>> pathSum(TreeNode<Integer> root, int sum) {
-	    ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+	public ArrayList<ArrayList<Integer>> pathSum(TreeNode<Integer> root, int sum) {
+	    ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 	    if(root == null) 
 	        return result;
 	 
-	    ArrayList<Integer> l = new ArrayList<Integer>();
+	    ArrayList<Integer> l = new ArrayList<>();
 	    l.add(root.value);
 	    dfs(root, sum-root.value, result, l);
 	    return result;
@@ -19,7 +18,7 @@ public class BinaryTreePathSum {
 	 
 	public void dfs(TreeNode<Integer> t, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> l){
 	    if(t.left==null && t.right==null && sum==0){
-	        ArrayList<Integer> temp = new ArrayList<Integer>();
+	        ArrayList<Integer> temp = new ArrayList<>();
 	        temp.addAll(l);
 	        result.add(temp);
 	    }

@@ -1,17 +1,18 @@
 package com.albion.pathsum;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.testng.annotations.Test;
-
 import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.TreeNode;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 
 
 public class BinaryTreePathSumTest {
 
-	public TreeNode<Integer> makeTree() {
+	@DataProvider(name = "data")
+	public Object[][] makeTree() {
 		TreeNode<Integer> root = new TreeNode<Integer>(5);
 		TreeNode<Integer> t04a = new TreeNode<Integer>(4);
 		TreeNode<Integer> t08 = new TreeNode<Integer>(8);
@@ -43,20 +44,32 @@ public class BinaryTreePathSumTest {
 		
 		t04b.left = t05;
 		t04b.right = t01;
-		
-		return root;
+
+        int[][] x = {{5,4,11,2}, {5,8,4,5}};
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        for(int i = 0; i < x.length; i++) {
+            ArrayList<Integer> list = new ArrayList<>();
+            for(int j = 0; j < x[0].length; j++) {
+                list.add(x[i][j]);
+            }
+            result.add(list);
+        }
+
+		return new Object[][] {
+				{root,22, result}
+		};
 	}
 	
-	@Test
-	public void testMatchingSum() {
-		int expectedSum = 22;
-		TreeNode<Integer> root = makeTree();
+	@Test(dataProvider = "data")
+	public void testMatchingSum(TreeNode<Integer> root, int sum, ArrayList<ArrayList> expected ) {
+
 		BinaryTreePrinter.printNode(root);
 		BinaryTreePathSum btps = new BinaryTreePathSum();
-		List<ArrayList<Integer>> results = btps.pathSum(root, expectedSum);
-		
-		
-		for(ArrayList<Integer> list : results) {
+		ArrayList<ArrayList<Integer>> actual = btps.pathSum(root, sum);
+
+        Assert.assertEquals(expected.size(), actual.size());
+
+        for(ArrayList<Integer> list : actual) {
 			System.out.println("=======");
 			for(Integer i : list) {
 				System.out.print(i + " ");
@@ -64,5 +77,12 @@ public class BinaryTreePathSumTest {
 			System.out.println("");
 			System.out.println("=======");
 		}
-	}
+
+        for (int i = 0; i < expected.size(); i++) {
+            ArrayList<Integer> x = expected.get(i);
+            ArrayList<Integer> y = actual.get(i);
+            boolean result = x.containsAll(y) && y.containsAll(x);
+            Assert.assertTrue(result);
+        }
+    }
 }
