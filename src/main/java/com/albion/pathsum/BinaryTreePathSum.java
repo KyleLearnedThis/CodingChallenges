@@ -4,6 +4,10 @@ import com.albion.common.tree.TreeNode;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * https://leetcode.com/problems/path-sum/
+ */
 public class BinaryTreePathSum {
 	public ArrayList<ArrayList<Integer>> pathSum(TreeNode<Integer> root, int sum) {
 	    ArrayList<ArrayList<Integer>> result = new ArrayList<>();
@@ -37,4 +41,42 @@ public class BinaryTreePathSum {
 	        l.remove(l.size()-1);
 	    }
 	}
+
+	public boolean hasPathSum(TreeNode<Integer> root, int sum) {
+		ArrayList<ArrayList<Integer>> lists = pathSum(root, sum);
+		return lists.size() >= 1;
+	}
+
+	public boolean hasPathSumV2(TreeNode<Integer> root, int sum) {
+		if(root == null) {
+			return false;
+		}
+
+		if(root.left == null && root.right == null && sum - root.value == 0) {
+			return true;
+		}
+
+		return hasPathSum(root.left, sum - root.value) || hasPathSum(root.right, sum - root.value);
+	}
+
+    public int maxPathSum(TreeNode<Integer> root) {
+        int max[] = new int[1];
+        max[0] = Integer.MIN_VALUE;
+        calculateSum(root, max);
+        return max[0];
+    }
+
+    public int calculateSum(TreeNode<Integer> root, int[] max) {
+        if (root == null)
+            return 0;
+
+        int left = calculateSum(root.left, max);
+        int right = calculateSum(root.right, max);
+
+        int current = Math.max(root.value, Math.max(root.value + left, root.value + right));
+
+        max[0] = Math.max(max[0], Math.max(current, left + root.value + right));
+
+        return current;
+    }
 }
