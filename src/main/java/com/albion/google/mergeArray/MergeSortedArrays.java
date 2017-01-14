@@ -1,4 +1,4 @@
-package com.albion.mergeArray;
+package com.albion.google.mergeArray;
 
 /**
  * http://www.programcreek.com/2012/12/leetcode-merge-sorted-array-java/

@@ -1,4 +1,4 @@
-package com.albion.pathsum;
+package com.albion.google.pathsum;
 
 import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.TreeNode;

@@ -1,4 +1,4 @@
-package com.albion.mergeArray;
+package com.albion.google.mergeArray;
 
 import org.testng.annotations.Test;
 

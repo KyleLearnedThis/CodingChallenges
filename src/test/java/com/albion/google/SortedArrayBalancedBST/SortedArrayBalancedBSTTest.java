@@ -1,4 +1,4 @@
-package com.albion.SortedArrayBalancedBST;
+package com.albion.google.SortedArrayBalancedBST;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
