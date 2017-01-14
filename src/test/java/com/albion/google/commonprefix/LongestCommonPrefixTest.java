@@ -10,8 +10,10 @@ public class LongestCommonPrefixTest {
     public Object[][] makeDataProvider(){
 
         String[] s1 = {"abcd", "abcde", "abcdef", "abc"};
+        String[] s2 = {"abab","aba","abc"};
         return new Object[][] {
-                {s1, "abc"}
+                {s1, "abc"},
+                {s2, "ab"}
         };
     }
     @Test(dataProvider = "data")
