@@ -1,4 +1,4 @@
-package com.albion.invert;
+package com.albion.google.invert;
 
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package com.albion.SortedArrayBalancedBST;
+package com.albion.google.SortedArrayBalancedBST;
 
 import com.albion.core.ListNode;
 import com.albion.core.TreeNode;
