@@ -6,20 +6,32 @@ import org.testng.annotations.Test;
 
 public class ValidParenthesesTest {
 
-@DataProvider(name = "data")
-public Object[][] testIsValidSyntaxData() {
-	Object[][] val = {
-			{"((()))", true},
-			{"(((", false},
-			{"(()())", true}
-	};
-	return val;
-}
-	
-  @Test(dataProvider="data")
-  public void testIsValidSyntax(String input, boolean expectation) {
-    ValidParentheses v = new ValidParentheses();
-    boolean actual = v.isValidSyntax(input);
-    Assert.assertEquals(actual, expectation);
-  }
+    @DataProvider(name = "data01")
+    public Object[][] testIsValidSyntaxData() {
+        Object[][] val = {
+                {"((()))", true},
+                {"(((", false},
+                {"(()())", true},
+
+                {"{{{}}}", true},
+                {"{{{", false},
+                {"{{}{}}", true},
+
+                {"[[[]]]", true},
+                {"[[[", false},
+                {"[[][]]", true},
+
+                {"({[]})", true},
+                {"({[", false},
+                {"([]{})", true},
+        };
+        return val;
+    }
+
+    @Test(dataProvider = "data01")
+    public void testIsValid(String input, boolean expectation) throws Exception {
+        ValidParentheses v = new ValidParentheses();
+        boolean actual = v.isValid(input);
+        Assert.assertEquals(actual, expectation);
+    }
 }
