@@ -48,9 +48,10 @@ public class RPN {
 			return val1 - val2;
 		} else if ("*".equals(operator)) {
 			return val1 * val2;
-		} else {
+		} else if ("/".equals(operator)){
 			return val1 / val2;
-		}
-
+		} else {
+		    throw new RuntimeException("Invalid Operator: " + operator);
+        }
 	}
 }
