@@ -130,10 +130,6 @@ public class HighwayManager {
 	 */
 	public int getShortestDistanceBetweenCities(String city1, String city2) {
 	    DijkstraV2 dijkstra = new DijkstraV2(graph);
-	    for(Map.Entry<String, Vertex> entry: graph.getVerticesMap().entrySet()){
-	    	Vertex v = entry.getValue();
-	    	v.previous = null;
-		}
         List<Vertex> list = dijkstra.findShortestDistance(city1, city2);
         Vertex v = list.get(list.size() -1);
         int result = v.getCost();
