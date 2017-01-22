@@ -131,4 +131,36 @@ public class TestHighwayManager {
 		System.out.println("testDistanceBetweenCitiesFull() passed successfully");
 	}
 
+
+    /**
+     * Deleted route between San Jose to San Luis Obispo.
+     */
+    @Test
+    public void testDistanceBetweenCitiesDeleted() throws AssertException {
+        System.out.println("running testDistanceBetweenCitiesFull()");
+
+        HighwayManager highwayMgr = new HighwayManager();
+        highwayMgr.buildHighway("San Francisco", "Oakland", 12);
+        highwayMgr.buildHighway("San Francisco", "San Jose", 48);
+        highwayMgr.buildHighway("San Jose", "Oakland", 41);
+
+        highwayMgr.buildHighway("Sacramento", "Oakland", 87);
+        highwayMgr.buildHighway("Sacramento", "Fresno", 171);
+        highwayMgr.buildHighway("Fresno", "Bakersfield", 109);
+        highwayMgr.buildHighway("Bakersfield", "San Luis Obispo", 130);
+        highwayMgr.buildHighway("San Luis Obispo", "San Jose", 185);
+        highwayMgr.buildHighway("San Luis Obispo", "Los Angeles", 189);
+        highwayMgr.buildHighway("Los Angeles", "Bakersfield", 112);
+        highwayMgr.buildHighway("Los Angeles", "San Bernardino", 60);
+        highwayMgr.buildHighway("Los Angeles", "San Diego", 130);
+        highwayMgr.buildHighway("San Diego", "San Bernardino", 108);
+
+        int SFtoLA = highwayMgr.getShortestDistanceBetweenCities("San Francisco", "Los Angeles");
+        Assert.assertEquals(422, SFtoLA);
+
+        highwayMgr.destroyHighway("San Jose", "San Luis Obispo");
+        SFtoLA = highwayMgr.getShortestDistanceBetweenCities("San Francisco", "Los Angeles");
+        Assert.assertEquals(491, SFtoLA);
+        System.out.println("testDistanceBetweenCitiesFull() passed successfully");
+    }
 }

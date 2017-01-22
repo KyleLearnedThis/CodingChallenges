@@ -9,7 +9,6 @@ import com.albion.common.search.graph.DijkstraV2;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * This class will manage a list of cities that may or may not be connected by highways.
@@ -22,7 +21,6 @@ public class HighwayManager {
 	 * This data structure will hold a list of cities as well as the distance of each directly
 	 * connected city
 	 */
-	private Map<String, HashMap<String, Integer>> cities;
 
 	/**
 	 * Constructor
@@ -75,9 +73,24 @@ public class HighwayManager {
 	 * method
 	 */
 	public void destroyHighway(String city1, String city2) {
-
+        HashMap<String, Vertex> map = graph.getVerticesMap();
+        Vertex v1 = map.get(city1);
+        Vertex v2 = map.get(city2);
+        if(v1 != null || v2 != null) {
+            removeEdge(v1, city2);
+            removeEdge(v2, city1);
+        }
 	}
 
+	private void removeEdge(Vertex vertex, String cityName) {
+        List<Edge> list = vertex.getEdgeList();
+        for (int i = 0; i < list.size(); i++) {
+            Edge e = list.get(i);
+            if(e.getY().equals(cityName)){
+                list.remove(i);
+            }
+        }
+    }
 	/**
 	 * This is for you to implement<br>
 	 *
@@ -130,10 +143,6 @@ public class HighwayManager {
 	 */
 	public int getShortestDistanceBetweenCities(String city1, String city2) {
 	    DijkstraV2 dijkstra = new DijkstraV2(graph);
-	    for(Map.Entry<String, Vertex> entry: graph.getVerticesMap().entrySet()){
-	    	Vertex v = entry.getValue();
-	    	v.previous = null;
-		}
         List<Vertex> list = dijkstra.findShortestDistance(city1, city2);
         Vertex v = list.get(list.size() -1);
         int result = v.getCost();

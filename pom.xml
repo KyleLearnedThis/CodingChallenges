@@ -6,7 +6,7 @@
 
     <groupId>com.albion.exam</groupId>
     <artifactId>leetcodev2</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
@@ -29,9 +29,9 @@
         <dependency>
             <groupId>com.albion.utils</groupId>
             <artifactId>data-structures</artifactId>
-            <version>0.0.6-SNAPSHOT</version>
+            <version>0.0.7-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/data-structures-0.0.6-SNAPSHOT.jar</systemPath>
+            <systemPath>${project.basedir}/src/main/resources/data-structures-0.0.7-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
