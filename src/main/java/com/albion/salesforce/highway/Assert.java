@@ -5,7 +5,6 @@ package com.albion.salesforce.highway;
  *
  */
 public class Assert {
-
 	/**
 	 * Asserts two strings are equal
 	 */

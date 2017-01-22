@@ -12,5 +12,4 @@ public class AssertException extends Exception {
 	public AssertException(String message) {
 		super(message);
 	}
-
 }
