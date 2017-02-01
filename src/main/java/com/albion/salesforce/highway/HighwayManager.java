@@ -44,14 +44,14 @@ public class HighwayManager {
         Vertex<String> c2 = cityMap.get(city2);
 
         if(c1 == null) {
-            c1 = new Vertex(city1);
+            c1 = new Vertex<>(city1);
             List<Edge<String>> list = new ArrayList<>();
             c1.setEdgeList(list);
             graph.getVerticesMap().put(city1, c1);
         }
 
         if(c2 == null) {
-            c2 = new Vertex(city2);
+            c2 = new Vertex<>(city2);
             List<Edge<String>> list = new ArrayList<>();
             c2.setEdgeList(list);
             graph.getVerticesMap().put(city2, c2);

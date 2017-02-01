@@ -9,7 +9,6 @@ import java.util.ArrayList;
  *
  */
 public class ArrayUtils {
-
 	/**
 	 * Use this class to create a copy of an array list of cities. This may or may not be needed
 	 * based on your implementation

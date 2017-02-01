@@ -9,5 +9,4 @@ public class Main {
         test.testDistanceBetweenCitiesShort();
         test.testDistanceBetweenCitiesFull();
 	}
-
 }
