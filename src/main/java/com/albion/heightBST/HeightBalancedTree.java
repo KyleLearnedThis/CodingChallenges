@@ -17,11 +17,9 @@ public class HeightBalancedTree {
 		
 		int mid = (high + low)/2;
 		BinarySearchTreeNode<Integer> cur = new BinarySearchTreeNode<>(nums[mid]);
-		BinarySearchTreeNode<Integer> left = cur.getLeft();
-		BinarySearchTreeNode<Integer> right = cur.getRight();
-		left = sortedArrayToBST(nums, low, mid - 1);
+		BinarySearchTreeNode<Integer> left = sortedArrayToBST(nums, low, mid - 1);
 		cur.setLeft(left);
-		right = sortedArrayToBST(nums, mid + 1, high);
+		BinarySearchTreeNode<Integer> right = sortedArrayToBST(nums, mid + 1, high);
 		cur.setRight(right);
 		return cur;
 	}
