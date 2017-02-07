@@ -17,28 +17,28 @@ import java.util.List;
 public class HighwayManager {
 
     Graph<String> graph;
-	/**
-	 * This data structure will hold a list of cities as well as the distance of each directly
-	 * connected city
-	 */
+    /**
+     * This data structure will hold a list of cities as well as the distance of each directly
+     * connected city
+     */
 
-	/**
-	 * Constructor
-	 */
-	public HighwayManager() {
+    /**
+     * Constructor
+     */
+    public HighwayManager() {
         graph = new Graph<>();
-	}
+    }
 
-	/**
-	 * This is for you to implement<br>
-	 *
-	 * This method takes two city names and connects them with a highway by a certain distance<br>
-	 *
-	 * Note: The order of the city names should not matter.<br>
-	 * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
-	 * method<br>
-	 */
-	public void buildHighway(String city1, String city2, int distance) {
+    /**
+     * This is for you to implement<br>
+     *
+     * This method takes two city names and connects them with a highway by a certain distance<br>
+     *
+     * Note: The order of the city names should not matter.<br>
+     * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
+     * method<br>
+     */
+    public void buildHighway(String city1, String city2, int distance) {
         HashMap<String, Vertex<String>> cityMap = graph.getVerticesMap();
         Vertex<String> c1 = cityMap.get(city1);
         Vertex<String> c2 = cityMap.get(city2);
@@ -61,18 +61,18 @@ public class HighwayManager {
         Edge<String> e2 = new Edge<>(city2, city1, Directions.BOTH, distance);
         c1.getEdgeList().add(e1);
         c2.getEdgeList().add(e2);
-	}
+    }
 
-	/**
-	 * This is for you to implement<br>
-	 *
-	 * This method takes two city names and destroys the highway between them<br>
-	 *
-	 * Note: The order of the city names should not matter.<br>
-	 * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
-	 * method
-	 */
-	public void destroyHighway(String city1, String city2) {
+    /**
+     * This is for you to implement<br>
+     *
+     * This method takes two city names and destroys the highway between them<br>
+     *
+     * Note: The order of the city names should not matter.<br>
+     * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
+     * method
+     */
+    public void destroyHighway(String city1, String city2) {
         HashMap<String, Vertex<String>> map = graph.getVerticesMap();
         Vertex<String> v1 = map.get(city1);
         Vertex<String> v2 = map.get(city2);
@@ -80,9 +80,9 @@ public class HighwayManager {
             removeEdge(v1, city2);
             removeEdge(v2, city1);
         }
-	}
+    }
 
-	private void removeEdge(Vertex<String > vertex, String cityName) {
+    private void removeEdge(Vertex<String > vertex, String cityName) {
         List<Edge<String>> list = vertex.getEdgeList();
         for (int i = 0; i < list.size(); i++) {
             Edge<String> e = list.get(i);
@@ -91,22 +91,22 @@ public class HighwayManager {
             }
         }
     }
-	/**
-	 * This is for you to implement<br>
-	 *
-	 * Given a city name this should return the closest city connected by a highway<br>
-	 *
-	 * For example:<br>
-	 * 		San Francisco is connected to Oakland by a 12 mile highway<br>
-	 * 		San Francisco is also connected to San Jose by a 48 mile highway<br>
-	 *
-	 * This function should return Oakland if San Francisco is passed in as the parameter because it
-	 * is the closest city at 12 miles away
-	 *
-	 * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
-	 * method
-	 */
-	public String getClosestCity(String cityName) {
+    /**
+     * This is for you to implement<br>
+     *
+     * Given a city name this should return the closest city connected by a highway<br>
+     *
+     * For example:<br>
+     * 		San Francisco is connected to Oakland by a 12 mile highway<br>
+     * 		San Francisco is also connected to San Jose by a 48 mile highway<br>
+     *
+     * This function should return Oakland if San Francisco is passed in as the parameter because it
+     * is the closest city at 12 miles away
+     *
+     * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
+     * method
+     */
+    public String getClosestCity(String cityName) {
         Vertex<String> v = graph.getVertex(cityName);
         int min = Integer.MAX_VALUE;
         String closestCity = "";
@@ -120,33 +120,33 @@ public class HighwayManager {
             }
         }
         return closestCity;
-	}
+    }
 
-	/**
-	 * This is for you to implement. Before starting this method make sure your other methods are
-	 * complete well covered by tests<br>
-	 *
-	 * This method will return the shortest route between two cities.<br>
-	 *
-	 * For example:<br>
-	 *
-	 * 		San Francisco is connected to Oakland by a 12 mile highway<br>
-	 * 		San Francisco is also connected to San Jose by a 48 mile highway<br>
-	 * 		Oakland is connected to Sacramento by an 87 mile highway<br>
-	 * 		Oakland is connected to San Jose by a 41 mile highway<br>
-	 *
-	 * Passing in San Jose and Sacramento should return 128 because the shortest distance is to go
-	 * from San Jose to Oakland to Sacremento which is 41 + 87 miles.
-	 *
-	 * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
-	 * method
-	 */
-	public int getShortestDistanceBetweenCities(String city1, String city2) {
-	    DijkstraV2 dijkstra = new DijkstraV2(graph);
+    /**
+     * This is for you to implement. Before starting this method make sure your other methods are
+     * complete well covered by tests<br>
+     *
+     * This method will return the shortest route between two cities.<br>
+     *
+     * For example:<br>
+     *
+     * 		San Francisco is connected to Oakland by a 12 mile highway<br>
+     * 		San Francisco is also connected to San Jose by a 48 mile highway<br>
+     * 		Oakland is connected to Sacramento by an 87 mile highway<br>
+     * 		Oakland is connected to San Jose by a 41 mile highway<br>
+     *
+     * Passing in San Jose and Sacramento should return 128 because the shortest distance is to go
+     * from San Jose to Oakland to Sacremento which is 41 + 87 miles.
+     *
+     * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
+     * method
+     */
+    public int getShortestDistanceBetweenCities(String city1, String city2) {
+        DijkstraV2 dijkstra = new DijkstraV2(graph);
         List<Vertex<String>> list = dijkstra.findShortestDistance(city1, city2);
         Vertex<String> v = list.get(list.size() -1);
         int result = v.getCost();
         return result;
-	}
+    }
 
 }
