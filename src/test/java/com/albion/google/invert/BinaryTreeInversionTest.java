@@ -3,7 +3,7 @@ package com.albion.google.invert;
 import com.albion.common.search.bst.BinaryTreeInversion;
 import com.albion.common.tree.BinarySearchTree;
 import com.albion.common.tree.BinaryTreePrinter;
-import com.albion.common.tree.TreeNode;
+import com.albion.common.tree.node.BinarySearchTreeNode;
 import org.testng.annotations.Test;
 
 public class BinaryTreeInversionTest {
@@ -16,7 +16,7 @@ public class BinaryTreeInversionTest {
 			bt.insert(x);
 		}
 
-		TreeNode<Integer> root = bt.getRoot();
+		BinarySearchTreeNode<Integer> root = bt.getRoot();
 		BinaryTreePrinter.printNode(root);
 
 		BinaryTreeInversion bti = new BinaryTreeInversion(root);

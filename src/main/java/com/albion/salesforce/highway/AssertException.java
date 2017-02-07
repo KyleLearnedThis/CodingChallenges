@@ -5,11 +5,11 @@ package com.albion.salesforce.highway;
  */
 @SuppressWarnings("serial")
 public class AssertException extends Exception {
-	public AssertException() {
-		super();
-	}
+    public AssertException() {
+        super();
+    }
 
-	public AssertException(String message) {
-		super(message);
-	}
+    public AssertException(String message) {
+        super(message);
+    }
 }

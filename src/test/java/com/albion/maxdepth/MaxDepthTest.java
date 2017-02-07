@@ -1,23 +1,22 @@
 package com.albion.maxdepth;
 
+import com.albion.common.tree.node.BinarySearchTreeNode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.albion.common.tree.TreeNode;
-
 public class MaxDepthTest {
 
-	public TreeNode<Integer> makeTree() {
-		TreeNode<Integer> root = new TreeNode<Integer>(5);
-		TreeNode<Integer> t04a = new TreeNode<Integer>(4);
-		TreeNode<Integer> t08 = new TreeNode<Integer>(8);
-		TreeNode<Integer> t11 = new TreeNode<Integer>(11);
-		TreeNode<Integer> t13 = new TreeNode<Integer>(13);
-		TreeNode<Integer> t04b = new TreeNode<Integer>(4);
-		TreeNode<Integer> t07 = new TreeNode<Integer>(7);
-		TreeNode<Integer> t02 = new TreeNode<Integer>(2);
-		TreeNode<Integer> t05 = new TreeNode<Integer>(5);
-		TreeNode<Integer> t01 = new TreeNode<Integer>(1);
+	public BinarySearchTreeNode<Integer> makeTree() {
+		BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<Integer>(5);
+		BinarySearchTreeNode<Integer> t04a = new BinarySearchTreeNode<Integer>(4);
+		BinarySearchTreeNode<Integer> t08 = new BinarySearchTreeNode<Integer>(8);
+		BinarySearchTreeNode<Integer> t11 = new BinarySearchTreeNode<Integer>(11);
+		BinarySearchTreeNode<Integer> t13 = new BinarySearchTreeNode<Integer>(13);
+		BinarySearchTreeNode<Integer> t04b = new BinarySearchTreeNode<Integer>(4);
+		BinarySearchTreeNode<Integer> t07 = new BinarySearchTreeNode<Integer>(7);
+		BinarySearchTreeNode<Integer> t02 = new BinarySearchTreeNode<Integer>(2);
+		BinarySearchTreeNode<Integer> t05 = new BinarySearchTreeNode<Integer>(5);
+		BinarySearchTreeNode<Integer> t01 = new BinarySearchTreeNode<Integer>(1);
 		/*
 		 *    5
              / \
@@ -45,7 +44,7 @@ public class MaxDepthTest {
 	
 	@Test
 	public void testMaxDepth() {
-		TreeNode<Integer> root = makeTree();
+		BinarySearchTreeNode<Integer> root = makeTree();
 		MaxDepth md = new MaxDepth();
 		int actual = md.maxDepthV3(root);
 		int expected = 4;

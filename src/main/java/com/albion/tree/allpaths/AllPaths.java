@@ -1,12 +1,12 @@
 package com.albion.tree.allpaths;
 
+import com.albion.common.tree.node.BinarySearchTreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.albion.common.tree.TreeNode;
-
 public class AllPaths {
-	public List<String> binaryTreePaths(TreeNode<Integer> root) {
+	public List<String> binaryTreePaths(BinarySearchTreeNode<Integer> root) {
 	    ArrayList<String> finalResult = new ArrayList<String>();
 	 
 	    if(root==null)
@@ -31,7 +31,7 @@ public class AllPaths {
 	    return finalResult;
 	}
 	 
-	public void dfs(TreeNode<Integer> root, ArrayList<ArrayList<String>> list, ArrayList<String> curr){
+	public void dfs(BinarySearchTreeNode<Integer> root, ArrayList<ArrayList<String>> list, ArrayList<String> curr){
 	    curr.add(String.valueOf(root.value));
 	 
 	    if(root.left==null && root.right==null){
@@ -41,12 +41,12 @@ public class AllPaths {
 	 
 	    if(root.left!=null){
 	        ArrayList<String> temp = new ArrayList<String>(curr);
-	        dfs(root.left, list, temp);
+	        dfs(root.getLeft(), list, temp);
 	    }
 	 
 	    if(root.right!=null){
 	        ArrayList<String> temp = new ArrayList<String>(curr);
-	        dfs(root.right, list, temp);
+	        dfs(root.getRight(), list, temp);
 	    } 
 	}
 }

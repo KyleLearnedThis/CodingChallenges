@@ -1,36 +1,36 @@
 package com.albion.google.invert;
 
-import com.albion.common.tree.TreeNode;
+import com.albion.common.tree.node.BinarySearchTreeNode;
 
 public class BinaryTreeInversion {
 	
-	public TreeNode<Integer> root;
+	public BinarySearchTreeNode<Integer> root;
 	
-	public BinaryTreeInversion(TreeNode<Integer> root) {
+	public BinaryTreeInversion(BinarySearchTreeNode<Integer> root) {
 		this.root = root;
 	}
 	
-	public TreeNode<Integer> invertTree(TreeNode<Integer> root) {
+	public BinarySearchTreeNode<Integer> invertTree(BinarySearchTreeNode<Integer> root) {
 		if(root!=null){
 			helper(root);
 		}
 		return root;    
 	}
 
-	public void helper(TreeNode<Integer> p){
-		TreeNode<Integer> temp = p.left;
+	public void helper(BinarySearchTreeNode<Integer> p){
+		BinarySearchTreeNode<Integer> temp = p.getLeft();
 		p.left = p.right;
 		p.right = temp;
 
 		if(p.left!=null){
-			helper(p.left);
+			helper(p.getLeft());
 		}
 		if(p.right!=null){
-			helper(p.right);
+			helper(p.getRight());
 		}
 	}
 	
-	public TreeNode<Integer> invert(){
+	public BinarySearchTreeNode<Integer> invert(){
 		invertTree(this.root);
 		return this.root;
 	}
