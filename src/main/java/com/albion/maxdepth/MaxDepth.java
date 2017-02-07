@@ -1,6 +1,7 @@
 package com.albion.maxdepth;
 
-import com.albion.common.tree.TreeNode;
+
+import com.albion.common.tree.node.BinarySearchTreeNode;
 
 import java.util.Stack;
 
@@ -9,19 +10,19 @@ import java.util.Stack;
  */
 public class MaxDepth {
 
-	public int maxDepth(TreeNode<Integer> root) {
+	public int maxDepth(BinarySearchTreeNode root) {
 		if (root == null) {
 			return 0;
 		}
-		return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+		return 1 + Math.max(maxDepth(root.getLeft()), maxDepth(root.getRight()));
 	}
 
-	public int maxDepthV3(TreeNode<Integer> root) {
+	public int maxDepthV3(BinarySearchTreeNode<Integer> root) {
 		if (root == null) {
 			return 0;
 		}
-		int leftLevel = maxDepth(root.left);
-		int rightLevel = maxDepth(root.right);
+		int leftLevel = maxDepth(root.getLeft());
+		int rightLevel = maxDepth(root.getRight());
 		if( leftLevel >= rightLevel) {
 			return leftLevel + 1;
 		} else {
@@ -30,10 +31,10 @@ public class MaxDepth {
 
 	}
 	
-	public int maxDepthV2(TreeNode<Integer> r) {
+	public int maxDepthV2(BinarySearchTreeNode<Integer> r) {
 		int depth = 0;
-		Stack<TreeNode<Integer>> wq = new Stack<TreeNode<Integer>>();
-		Stack<TreeNode<Integer>> path = new Stack<TreeNode<Integer>>();
+		Stack<BinarySearchTreeNode<Integer>> wq = new Stack<>();
+		Stack<BinarySearchTreeNode<Integer>> path = new Stack<>();
 
 		wq.push(r);
 		while (!wq.empty()) {
@@ -45,10 +46,10 @@ public class MaxDepth {
 				wq.pop();
 			} else {
 				path.push(r);
-				if (r.right != null)
-					wq.push(r.right);
+				if (r.getRight() != null)
+					wq.push(r.getRight());
 				if (r.left != null)
-					wq.push(r.left);
+					wq.push(r.getLeft());
 			}
 		}
 

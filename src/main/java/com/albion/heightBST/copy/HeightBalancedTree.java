@@ -1,22 +1,22 @@
 package com.albion.heightBST.copy;
 
-import com.albion.common.tree.TreeNode;
+import com.albion.common.tree.node.BinarySearchTreeNode;
 
 public class HeightBalancedTree {
-	public TreeNode<Integer> sortedArrayToBST(int[] nums) {
+	public BinarySearchTreeNode<Integer> sortedArrayToBST(int[] nums) {
 		if (nums.length == 0)
 			return null;
  
 		return sortedArrayToBST(nums, 0, nums.length - 1);
 	}
 	
-	public TreeNode<Integer> sortedArrayToBST(int[] nums, int low, int high) {
+	public BinarySearchTreeNode<Integer> sortedArrayToBST(int[] nums, int low, int high) {
 		if(low > high) {
 			return null;
 		}
 		
 		int mid = (high + low)/2;
-		TreeNode<Integer> cur = new TreeNode<Integer>(nums[mid]);
+		BinarySearchTreeNode<Integer> cur = new BinarySearchTreeNode<Integer>(nums[mid]);
 		cur.left = sortedArrayToBST(nums, low, mid - 1);
 		cur.right = sortedArrayToBST(nums, mid + 1, high);
 		return cur;

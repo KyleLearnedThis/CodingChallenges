@@ -1,9 +1,8 @@
 package com.albion.heightBST;
 
-import org.testng.annotations.Test;
-
 import com.albion.common.tree.BinaryTreePrinter;
-import com.albion.common.tree.TreeNode;
+import com.albion.common.tree.node.BinarySearchTreeNode;
+import org.testng.annotations.Test;
 
 public class HeightBalancedTreeTest {
   @Test
@@ -11,7 +10,7 @@ public class HeightBalancedTreeTest {
 	  
 	  int[] nums = {1,2,3,4,5,6,7,8,9,10,11};
 	  HeightBalancedTree hbt = new HeightBalancedTree();
-	  TreeNode<Integer> root = hbt.sortedArrayToBST(nums);
+	  BinarySearchTreeNode<Integer> root = hbt.sortedArrayToBST(nums);
 	  BinaryTreePrinter.printNode(root);
   }
 }

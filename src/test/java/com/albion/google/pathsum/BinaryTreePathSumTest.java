@@ -1,7 +1,7 @@
 package com.albion.google.pathsum;
 
 import com.albion.common.tree.BinaryTreePrinter;
-import com.albion.common.tree.TreeNode;
+import com.albion.common.tree.node.BinarySearchTreeNode;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -11,17 +11,17 @@ import java.util.ArrayList;
 
 public class BinaryTreePathSumTest {
 
-    private TreeNode<Integer> makeTree() {
-        TreeNode<Integer> root = new TreeNode<>(5);
-        TreeNode<Integer> t04a = new TreeNode<>(4);
-        TreeNode<Integer> t08 = new TreeNode<>(8);
-        TreeNode<Integer> t11 = new TreeNode<>(11);
-        TreeNode<Integer> t13 = new TreeNode<>(13);
-        TreeNode<Integer> t04b = new TreeNode<>(4);
-        TreeNode<Integer> t07 = new TreeNode<>(7);
-        TreeNode<Integer> t02 = new TreeNode<>(2);
-        TreeNode<Integer> t05 = new TreeNode<>(5);
-        TreeNode<Integer> t01 = new TreeNode<>(1);
+    private BinarySearchTreeNode<Integer> makeTree() {
+        BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<>(5);
+        BinarySearchTreeNode<Integer> t04a = new BinarySearchTreeNode<>(4);
+        BinarySearchTreeNode<Integer> t08 = new BinarySearchTreeNode<>(8);
+        BinarySearchTreeNode<Integer> t11 = new BinarySearchTreeNode<>(11);
+        BinarySearchTreeNode<Integer> t13 = new BinarySearchTreeNode<>(13);
+        BinarySearchTreeNode<Integer> t04b = new BinarySearchTreeNode<>(4);
+        BinarySearchTreeNode<Integer> t07 = new BinarySearchTreeNode<>(7);
+        BinarySearchTreeNode<Integer> t02 = new BinarySearchTreeNode<>(2);
+        BinarySearchTreeNode<Integer> t05 = new BinarySearchTreeNode<>(5);
+        BinarySearchTreeNode<Integer> t01 = new BinarySearchTreeNode<>(1);
 		/*
 		 *    5
              / \
@@ -48,16 +48,16 @@ public class BinaryTreePathSumTest {
 
     @DataProvider(name = "data")
 	public Object[][] makeDataProvider() {
-		TreeNode<Integer> root = new TreeNode<>(5);
-		TreeNode<Integer> t04a = new TreeNode<>(4);
-		TreeNode<Integer> t08 = new TreeNode<>(8);
-		TreeNode<Integer> t11 = new TreeNode<>(11);
-		TreeNode<Integer> t13 = new TreeNode<>(13);
-		TreeNode<Integer> t04b = new TreeNode<>(4);
-		TreeNode<Integer> t07 = new TreeNode<>(7);
-		TreeNode<Integer> t02 = new TreeNode<>(2);
-		TreeNode<Integer> t05 = new TreeNode<>(5);
-		TreeNode<Integer> t01 = new TreeNode<>(1);
+		BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<>(5);
+		BinarySearchTreeNode<Integer> t04a = new BinarySearchTreeNode<>(4);
+		BinarySearchTreeNode<Integer> t08 = new BinarySearchTreeNode<>(8);
+		BinarySearchTreeNode<Integer> t11 = new BinarySearchTreeNode<>(11);
+		BinarySearchTreeNode<Integer> t13 = new BinarySearchTreeNode<>(13);
+		BinarySearchTreeNode<Integer> t04b = new BinarySearchTreeNode<>(4);
+		BinarySearchTreeNode<Integer> t07 = new BinarySearchTreeNode<>(7);
+		BinarySearchTreeNode<Integer> t02 = new BinarySearchTreeNode<>(2);
+		BinarySearchTreeNode<Integer> t05 = new BinarySearchTreeNode<>(5);
+		BinarySearchTreeNode<Integer> t01 = new BinarySearchTreeNode<>(1);
 		/*
 		 *    5
              / \
@@ -96,7 +96,7 @@ public class BinaryTreePathSumTest {
 	}
 	
 	@Test(dataProvider = "data")
-	public void testMatchingSum(TreeNode<Integer> root, int sum, ArrayList<ArrayList> expected) {
+	public void testMatchingSum(BinarySearchTreeNode<Integer> root, int sum, ArrayList<ArrayList> expected) {
 
 		BinaryTreePrinter.printNode(root);
 		BinaryTreePathSum btps = new BinaryTreePathSum();
@@ -123,9 +123,9 @@ public class BinaryTreePathSumTest {
 
     @Test
     public void testMaxPathSum() throws Exception {
-        TreeNode<Integer> root = new TreeNode<>(1);
-        TreeNode<Integer> l = new TreeNode<>(2);
-        TreeNode<Integer> r = new TreeNode<>(3);
+        BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<>(1);
+        BinarySearchTreeNode<Integer> l = new BinarySearchTreeNode<>(2);
+        BinarySearchTreeNode<Integer> r = new BinarySearchTreeNode<>(3);
         root.left = l;
         root.right = r;
 
