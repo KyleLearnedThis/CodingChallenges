@@ -14,7 +14,7 @@ public class BinaryTreeInversion {
 		if(root!=null){
 			helper(root);
 		}
-		return root;    
+		return root;
 	}
 
 	public void helper(BinarySearchTreeNode<Integer> p){
