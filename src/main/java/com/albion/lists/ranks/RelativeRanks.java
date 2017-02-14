@@ -3,7 +3,7 @@ package com.albion.lists.ranks;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class GenerateRanks {
+public class RelativeRanks {
     /**
      * https://leetcode.com/problems/relative-ranks/
      * Input: [5, 4, 3, 2, 1]
