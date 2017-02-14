@@ -2,7 +2,7 @@ package com.albion.tree.allpaths;
 
 import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.node.BinarySearchTreeNode;
-import com.albion.heightBST.HeightBalancedTree;
+import com.albion.tree.heightBST.HeightBalancedTree;
 import org.testng.annotations.Test;
 
 public class AllPathsTest {

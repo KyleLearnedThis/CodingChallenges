@@ -6,7 +6,7 @@
  	<test name="order">
 		<classes>
 			<class name="com.albion.google.SortedArrayBalancedBST.SortedArrayBalancedBSTTest" />
-			<class name="com.albion.reversewords.ReverseWordsTest" />
+			<class name="com.albion.text.reversewords.ReverseWordsTest" />
 		</classes>
 	</test>
 </suite>
