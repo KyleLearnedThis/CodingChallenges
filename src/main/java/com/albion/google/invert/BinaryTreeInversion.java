@@ -18,15 +18,17 @@ public class BinaryTreeInversion {
 	}
 
 	public void helper(BinarySearchTreeNode<Integer> p){
-		BinarySearchTreeNode<Integer> temp = p.getLeft();
-		p.left = p.right;
-		p.right = temp;
+		BinarySearchTreeNode<Integer> left = p.getLeft();
+		BinarySearchTreeNode<Integer> right = p.getRight();
+		BinarySearchTreeNode<Integer> temp = left;
+		left = right;
+		right = temp;
 
-		if(p.left!=null){
-			helper(p.getLeft());
+		if(left!=null){
+			helper(left);
 		}
-		if(p.right!=null){
-			helper(p.getRight());
+		if(right!=null){
+			helper(right);
 		}
 	}
 	
