@@ -12,7 +12,7 @@ public class LongestCommonPrefix {
             return strs[0];
         }
 
-        int min = strs.length + 1;
+        int min = Integer.MAX_VALUE;
 
         for (int i = 0; i < strs.length; i++) {
             String str = strs[i];
