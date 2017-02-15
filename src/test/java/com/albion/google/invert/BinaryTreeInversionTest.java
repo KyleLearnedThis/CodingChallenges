@@ -1,6 +1,5 @@
 package com.albion.google.invert;
 
-import com.albion.common.search.bst.BinaryTreeInversion;
 import com.albion.common.tree.BinarySearchTree;
 import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.node.BinarySearchTreeNode;
