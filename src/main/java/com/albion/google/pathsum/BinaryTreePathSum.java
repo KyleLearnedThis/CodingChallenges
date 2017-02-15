@@ -11,36 +11,37 @@ import java.util.ArrayList;
 public class BinaryTreePathSum {
     public ArrayList<ArrayList<Integer>> pathSum(BinarySearchTreeNode<Integer> root, int sum) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-        if(root == null)
+        if(root == null){
             return result;
+        }
 
-        ArrayList<Integer> l = new ArrayList<>();
-        l.add(root.value);
-        dfs(root, sum-root.value, result, l);
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(root.value);
+        dfs(root, sum-root.value, result, list);
         return result;
     }
 
-    public void dfs(BinarySearchTreeNode<Integer> t, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> l){
+    public void dfs(BinarySearchTreeNode<Integer> t, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list){
         BinarySearchTreeNode<Integer> left = t.getLeft();
         BinarySearchTreeNode<Integer> right = t.getRight();
         if(left==null && right==null && sum==0){
             ArrayList<Integer> temp = new ArrayList<>();
-            temp.addAll(l);
+            temp.addAll(list);
             result.add(temp);
         }
         //search path of left node
         if(left != null){
-            l.add(left.value);
-            dfs(left, sum-left.value, result, l);
-            l.remove(l.size()-1);
+            list.add(left.value);
+            dfs(left, sum-left.value, result, list);
+            list.remove(list.size()-1);
         }
 
 
         //search path of right node
         if(right!=null){
-            l.add(right.value);
-            dfs(right, sum-t.right.value, result, l);
-            l.remove(l.size()-1);
+            list.add(right.value);
+            dfs(right, sum-t.right.value, result, list);
+            list.remove(list.size()-1);
         }
     }
 

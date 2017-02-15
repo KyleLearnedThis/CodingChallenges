@@ -27,7 +27,6 @@ public class SortedArrayBalancedBSTTest {
   @Test(dataProvider = "data01")
   public void sortedListToBST(ListNode n) {
 	  SortedArrayBalancedBST s = new SortedArrayBalancedBST();
-	  s = new SortedArrayBalancedBST();
 	  TreeNode root = s.sortedListToBST(n);
   }
 }
