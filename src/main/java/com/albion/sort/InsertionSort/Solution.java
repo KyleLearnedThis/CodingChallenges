@@ -24,14 +24,9 @@ public class Solution {
 			}
 			tail = next;
 			current = head;
-
 		}
 		return head;
-
-
 	}
-
-
 
 	public void print(ListNode head) {
 		for (ListNode c = head; c != null; c = c.next) {
