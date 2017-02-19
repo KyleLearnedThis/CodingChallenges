@@ -2,7 +2,6 @@ package com.albion.lists.consecutive;
 
 /**
  * https://leetcode.com/problems/max-consecutive-ones/
- *
  */
 public class MaxConsecutive {
     public int findMaxConsecutiveOnes(int[] nums) {

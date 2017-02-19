@@ -36,7 +36,6 @@ public class BinaryTreePathSum {
             list.remove(list.size()-1);
         }
 
-
         //search path of right node
         if(right!=null){
             list.add(right.value);
@@ -56,7 +55,7 @@ public class BinaryTreePathSum {
         }
         BinarySearchTreeNode<Integer> left = root.getLeft();
         BinarySearchTreeNode<Integer> right = root.getRight();
-        if(root.getLeft() == null && root.getRight() == null && sum - root.value == 0) {
+        if(left == null && right == null && (sum - root.value == 0)) {
             return true;
         }
 
