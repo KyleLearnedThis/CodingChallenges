@@ -20,25 +20,39 @@ public class SortedArrayBalancedBST {
 			return new TreeNode(list.get(0).val);
 		} else if (list.size() == 2) {
 			root = new TreeNode(list.get(0).val);
-			if (list.get(1).val > list.get(0).val)
+			if (list.get(1).val > list.get(0).val) {
 				root.right = new TreeNode(list.get(1).val);
-			else
+			} else {
 				root.left = new TreeNode(list.get(1).val);
-
+			}
 			return root;
 		}
 
 		int[] myArray = new int[list.size()];
-
 		for (int i = 0; i < myArray.length; i++) {
 			myArray[i] = list.get(i).val;
 		}
 
-		int offset = myArray.length / 2;
 		root = sortedListToBSTWork(myArray, 0, myArray.length - 1);
-
 		return root;
 
+	}
+
+	public TreeNode sortedArrayToBST(int[] nums) {
+		TreeNode root = null;
+		if (nums.length == 1) {
+			return new TreeNode(nums[0]);
+		} else if (nums.length == 2) {
+			root = new TreeNode(nums[0]);
+			if (nums[1] > nums[0]) {
+				root.right = new TreeNode(nums[1]);
+			} else {
+				root.left = new TreeNode(nums[1]);
+			}
+			return root;
+		}
+		root = sortedListToBSTWork(nums, 0, nums.length - 1);
+		return root;
 	}
 
 	public TreeNode sortedListToBSTWork(int[] arr, int start, int end) {
@@ -49,10 +63,8 @@ public class SortedArrayBalancedBST {
 
 		int mid = (start + end) / 2;
 		root = new TreeNode(arr[mid]);
-
 		root.left = sortedListToBSTWork(arr, start, mid - 1);
 		root.right = sortedListToBSTWork(arr, mid + 1, end);
-
 		return root;
 	}
 }
