@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public class SortedArrayBalancedBST {
 	public TreeNode sortedListToBST(ListNode head) {
-		TreeNode root = null;
-		ArrayList<ListNode> list = new ArrayList<ListNode>();
+		TreeNode root;
+		ArrayList<ListNode> list = new ArrayList<>();
 		for (ListNode c1 = head; c1 != null; c1 = c1.next) {
 			list.add(c1);
 		}
