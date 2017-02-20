@@ -2,7 +2,7 @@ package com.albion.classics.RPN;
 
 import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.node.BinarySearchTreeNode;
-import com.albion.tree.heightBST.copy2.HeightBalancedTree;
+import com.albion.tree.heightBST.HeightBalancedTree;
 import org.testng.annotations.Test;
 
 /**
