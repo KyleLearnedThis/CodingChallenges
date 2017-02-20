@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 /*
  * http://www.geeksforgeeks.org/sorted-array-to-balanced-bst/
+ * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
  */
 public class SortedArrayBalancedBST {
 	public TreeNode sortedListToBST(ListNode head) {
