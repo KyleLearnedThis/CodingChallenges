@@ -49,8 +49,7 @@ public class SpiralMatrix {
             }
 
         /* Print the first column from the remaining columns */
-            if (l
-                    < n) {
+            if (l < n) {
                 for (i = m - 1; i >= k; --i) {
                     // System.out.print(" " + matrix[i][l]);
                     result.add(matrix[i][l]);
