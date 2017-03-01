@@ -17,17 +17,7 @@ public class AllPaths {
 
 		dfs(root, results, curr);
 
-		for(ArrayList<String> al : results){
-			StringBuilder sb = new StringBuilder();
-			sb.append(al.get(0));
-			for(int i=1; i<al.size();i++){
-				sb.append("->"+al.get(i));
-			}
-			String line = sb.toString();
-			System.out.println("========= LINE: " + line);
-			finalResult.add(line);
-		}
-
+		finalResult = processAllPaths(results);
 		return finalResult;
 	}
 
@@ -48,5 +38,20 @@ public class AllPaths {
 			ArrayList<String> temp = new ArrayList<>(path);
 			dfs(root.getRight(), allPaths, temp);
 		}
+	}
+
+	public ArrayList<String> processAllPaths(ArrayList<ArrayList<String>> results) {
+		ArrayList<String> finalResult = new ArrayList<>();
+		for(ArrayList<String> al : results){
+			StringBuilder sb = new StringBuilder();
+			sb.append(al.get(0));
+			for(int i=1; i<al.size();i++){
+				sb.append("->"+al.get(i));
+			}
+			String line = sb.toString();
+			System.out.println("========= LINE: " + line);
+			finalResult.add(line);
+		}
+		return finalResult;
 	}
 }
