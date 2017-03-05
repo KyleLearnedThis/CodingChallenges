@@ -13,7 +13,6 @@ public class AllPathsTest {
       HeightBalancedTree hbt = new HeightBalancedTree();
       BinarySearchTreeNode<Integer> root = hbt.sortedArrayToBST(nums);
       BinaryTreePrinter.printNode(root);
-
       AllPaths a = new AllPaths();
       a.binaryTreePaths(root);
   }
