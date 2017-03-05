@@ -17,7 +17,7 @@ public class AllPaths {
 
 		dfs(root, results, curr);
 
-		finalResult = processAllPaths(results);
+		finalResult = formatPaths(results);
 		return finalResult;
 	}
 
@@ -40,8 +40,13 @@ public class AllPaths {
 		}
 	}
 
-	public ArrayList<String> processAllPaths(ArrayList<ArrayList<String>> results) {
-		ArrayList<String> finalResult = new ArrayList<>();
+	/**
+	 * Utility function to convert to LeetCode result.
+	 * @param results
+	 * @return
+	 */
+	public ArrayList<String> formatPaths(ArrayList<ArrayList<String>> results) {
+		ArrayList<String> formattedResult = new ArrayList<>();
 		for(ArrayList<String> al : results){
 			StringBuilder sb = new StringBuilder();
 			sb.append(al.get(0));
@@ -50,8 +55,8 @@ public class AllPaths {
 			}
 			String line = sb.toString();
 			System.out.println("========= LINE: " + line);
-			finalResult.add(line);
+			formattedResult.add(line);
 		}
-		return finalResult;
+		return formattedResult;
 	}
 }
