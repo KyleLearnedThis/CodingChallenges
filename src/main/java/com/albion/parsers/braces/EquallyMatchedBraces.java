@@ -1,8 +1,8 @@
-package com.albion.parsers.EquallyMatchedBraces;
+package com.albion.parsers.braces;
 
 import java.util.Stack;
 
-class MyClass {
+class EquallyMatchedBraces {
 	public static void check_braces(String[] expressions) {
 		// Write your code here
 		// To print results to the standard output you can use System.out.println()

@@ -1,9 +1,9 @@
-package com.albion.parsers.EquallyMatchedBraces;
+package com.albion.parsers.braces;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class MyClassTest {
+public class EquallyMatchedBracesTest {
 	// )(){}
 
 	@DataProvider(name = "data01")
@@ -16,7 +16,7 @@ public class MyClassTest {
 
 	@Test(dataProvider = "data01")
 	public void check_braces(String[] input) {
-		MyClass m = new MyClass();
+		EquallyMatchedBraces m = new EquallyMatchedBraces();
 		m.check_braces(input);
 
 	}
