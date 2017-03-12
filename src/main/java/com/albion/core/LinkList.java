@@ -44,4 +44,55 @@ public class LinkList {
     public ListNode getHead() {
         return head;
     }
+
+    public void delete(ListNode node) {
+        if(node.next != null && node.next.next != null) {
+            if(node.next == null ){
+
+            }
+            node.val = node.next.val;
+            node.next = node.next.next;
+        }
+
+    }
+
+    /**
+     * @param val
+     * @return first occurrence of val in the list; Null if not found.
+     */
+    public ListNode find(int val) {
+        ListNode cur = head;
+        while(cur != null) {
+            if(cur.val == val){
+                return cur;
+            }
+            cur = cur.next;
+        }
+        return null;
+    }
+
+    public boolean removeFirst(){
+        if(head == null){
+            return false;
+        }
+
+        int v = head.val;
+        head = head.next;
+        return true;
+    }
+
+    public void removeLast(){
+        if(head != null){
+            //Only two elements.
+            if(head.next == null){
+                head = null;
+            }else{
+                ListNode t = head.next;
+                while(t.next.next != null){
+                    t = t.next;
+                }
+                t.next=  null;
+            }
+        }
+    }
 }

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class MyClassTest {
+public class EquallyMatchedBracesTest {
 
 	@DataProvider(name = "data01")
 	public Object[][] data() {

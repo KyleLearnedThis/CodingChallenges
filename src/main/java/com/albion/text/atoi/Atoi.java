@@ -1,8 +1,8 @@
 package com.albion.text.atoi;
 
-/*
- * 1235
- * 
+
+/**
+ * https://leetcode.com/problems/string-to-integer-atoi/
  */
 public class Atoi {
 	public int myAtoi(String str) {
@@ -12,10 +12,10 @@ public class Atoi {
 		str = str.trim();
 		boolean isNegative = false;
 		if(str.charAt(0) == '+') {
-			str = str.substring(1, str.length());	
+			str = str.substring(1, str.length());
 		} else if (str.charAt(0) == '-'){
 			isNegative = true;
-			str = str.substring(1, str.length());	
+			str = str.substring(1, str.length());
 		}
 		str = str.replaceFirst("^0+(?!$)", "");
 
@@ -45,5 +45,47 @@ public class Atoi {
 		int val = x[index] - 48;
 		int result = val * base;
 		return result;
+	}
+
+	/**
+	 * https://leetcode.com/problems/reverse-integer/
+	 */
+	public int reverse(int x) {
+		boolean isNegative = false;
+
+		if(x < 0) {
+			isNegative = true;
+			x = Math.abs(x);
+		}
+
+		long result = 0;
+		int digits = countDigits(x);
+		for (int i = 0; i < digits; i++) {
+			int digit = extractDigit(x, i);
+			int n = digits - i - 1;
+			long base = (long) Math.pow(10, n);
+			result = result + (long) digit * base;
+		}
+
+		if(result > Integer.MAX_VALUE ){
+		    result = 0;
+        }
+
+        if(isNegative){
+            result = -result;
+        }
+
+        return (int) result;
+	}
+
+	public int extractDigit(int value, int index) {
+		int base = (int) Math.pow(10, index);
+		int digit = value / base % 10;
+		return digit;
+	}
+
+	public int countDigits(int value) {
+		int digit = (int) Math.ceil(Math.log10(value + 1));
+		return digit;
 	}
 }
