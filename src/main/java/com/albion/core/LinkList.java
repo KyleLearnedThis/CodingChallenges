@@ -45,6 +45,10 @@ public class LinkList {
         return head;
     }
 
+    /**
+     * http://quiz.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/
+     * @param position
+     */
     public void delete(int position) {
         // If linked list is empty
         if (head == null) {
