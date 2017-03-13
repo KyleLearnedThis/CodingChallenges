@@ -2,7 +2,7 @@ package com.albion.lists.shuffle;
 
 import org.testng.annotations.Test;
 
-public class ShuffleTest {
+public class FisherYatesShuffleTest {
     @Test
     public void testShuffleArray() throws Exception {
         int[] input = {1,2,3,4,5,6,7,8,9,10};
