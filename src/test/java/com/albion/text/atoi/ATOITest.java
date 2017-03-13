@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class AtoiTest {
+public class ATOITest {
 
 	@DataProvider(name = "data02")
 	public Object[][] dat02() {
@@ -21,21 +21,21 @@ public class AtoiTest {
 
 	@Test(dataProvider = "data02")
 	public void testReverse(int input, int expected) throws Exception {
-		Atoi atoi = new Atoi();
+		ATOI atoi = new ATOI();
 		int actual = atoi.reverse(input);
 		Assert.assertEquals(actual, expected);
 	}
 
 	@Test
 	public void testCountDigits() throws Exception {
-		Atoi a = new Atoi();
+		ATOI a = new ATOI();
 		int actual = a.countDigits(1234);
 		Assert.assertEquals(actual,4);
 	}
 
 	@Test
 	public void testExtractDigit() throws Exception {
-		Atoi a = new Atoi();
+		ATOI a = new ATOI();
 		int actual = a.extractDigit(123, 1);
 		Assert.assertEquals(actual, 2);
 	}
@@ -54,8 +54,8 @@ public class AtoiTest {
 
 	@Test(dataProvider = "data01")
 	public void testAtoi(String input, int expectedNumber) {
-		Atoi s = new Atoi();
-		int actual = s.myAtoi(input);
+		ATOI s = new ATOI();
+		int actual = s.atoi(input);
 		Assert.assertEquals(actual, expectedNumber, "not equal");
 	}
 }

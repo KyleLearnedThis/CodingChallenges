@@ -4,8 +4,8 @@ package com.albion.text.atoi;
 /**
  * https://leetcode.com/problems/string-to-integer-atoi/
  */
-public class Atoi {
-	public int myAtoi(String str) {
+public class ATOI {
+	public int atoi(String str) {
 		if("".equals(str)){
 			return 0;
 		}
@@ -68,14 +68,14 @@ public class Atoi {
 		}
 
 		if(result > Integer.MAX_VALUE ){
-		    result = 0;
-        }
+			result = 0;
+		}
 
-        if(isNegative){
-            result = -result;
-        }
+		if(isNegative){
+			result = -result;
+		}
 
-        return (int) result;
+		return (int) result;
 	}
 
 	public int extractDigit(int value, int index) {
