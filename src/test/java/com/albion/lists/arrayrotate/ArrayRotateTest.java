@@ -12,7 +12,7 @@ public class ArrayRotateTest {
     ArrayRotate a = new ArrayRotate();
     a.rotate(nums, k);
     for(int x : nums){
-    	System.out.println("blah: " + x);
+      System.out.println("blah: " + x);
     }
   }
 }
