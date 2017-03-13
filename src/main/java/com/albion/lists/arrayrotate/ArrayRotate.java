@@ -19,7 +19,6 @@ public class ArrayRotate {
 			result[i] = nums[j];
 			j++;
 		}
-
 		System.arraycopy( result, 0, nums, 0, nums.length );
 	}
 	
