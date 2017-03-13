@@ -3,7 +3,7 @@ package com.albion.sort.tcolors;
 public class ThreeColorSort {
 	/**
 	 * You have an array of size n which contains balls of 3 colors 
-	 * -Red, Black and White. Write a function that will arrange the array such that all the red balls are on the left, all the white balls are in the middle and all the black balls are on the right.
+	 * Red, Black and White. Write a function that will arrange the array such that all the red balls are on the left, all the white balls are in the middle and all the black balls are on the right.
 	 * Input = {b,[w],r,r,w,b,b,[w],r}
 	 * Output = {r,r,r,w,w,w,b,b,b}
 	 * In O(N) in-place.
