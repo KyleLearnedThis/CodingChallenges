@@ -17,7 +17,6 @@ public class ContainDuplicates {
         }
         return false;
     }
-
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> result = new ArrayList<>();
         if(nums == null) {
