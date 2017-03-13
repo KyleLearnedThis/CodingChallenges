@@ -8,7 +8,7 @@ import com.albion.core.Utils;
 
 /*
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
- Output: 7 -> 0 -> 8
+ * Output: 7 -> 0 -> 8
  */
 public class ReverseListAddTest {
 
@@ -23,19 +23,14 @@ public class ReverseListAddTest {
 		Integer[] a1= {9};
 		Integer[] a2 = {9};
 		ListNode b1 = Utils.generateList(a1);
-		ListNode b2 = Utils.generateList(a2);		
+		ListNode b2 = Utils.generateList(a2);
 		
 		Integer[] c1= {1};
 		Integer[] c2 = {9,9};
 		ListNode d1 = Utils.generateList(c1);
-		ListNode d2 = Utils.generateList(c2);	
+		ListNode d2 = Utils.generateList(c2);
 		
-		Object[][] ret = { 
-				{d1,d2}
-//		, {b1,b2} 
-		
-		};
-		
+		Object[][] ret = {{d1,d2}, {b1,b2}};
 		return ret;
 	}
 
