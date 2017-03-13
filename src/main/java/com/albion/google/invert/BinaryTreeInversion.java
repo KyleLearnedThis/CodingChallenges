@@ -24,10 +24,10 @@ public class BinaryTreeInversion {
 		left = right;
 		right = temp;
 
-		if(left!=null){
+		if(left != null){
 			helper(left);
 		}
-		if(right!=null){
+		if(right != null){
 			helper(right);
 		}
 	}

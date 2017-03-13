@@ -13,7 +13,7 @@ public class LinkListTest {
         list.print();
         ListNode n = list.find(6);
         Assert.assertNotNull(n);
-        list.delete(n);
+        list.delete(5);
         System.out.println("AFTER");
         list.print();
     }

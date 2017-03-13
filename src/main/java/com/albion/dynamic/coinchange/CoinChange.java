@@ -19,8 +19,8 @@ public class CoinChange {
         }
         for(int i=0; i<=amount; i++){
             for(int coin: coins){
-                if(i+coin <=amount){
-                    if(dp[i]==Integer.MAX_VALUE){
+                if(i+coin <= amount){
+                    if(dp[i] == Integer.MAX_VALUE){
                         dp[i+coin] = dp[i+coin];
                     }else{
                         dp[i+coin] = Math.min(dp[i+coin], dp[i]+1);
@@ -34,6 +34,7 @@ public class CoinChange {
         }
         return dp[amount];
     }
+    
     public int bfs(int[] coins, int amount) {
         if (amount == 0) {
             return 0;

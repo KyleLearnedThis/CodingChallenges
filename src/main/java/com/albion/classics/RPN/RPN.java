@@ -16,14 +16,10 @@ import java.util.Stack;
  */
 public class RPN {
 	public int evalRPN(String[] tokens) {
-
-		List<String> operators = Arrays.asList(new String[] { "+", "-", "*",
-				"/" });
-
-		Stack<Integer> stack = new Stack<Integer>();
+		List<String> operators = Arrays.asList(new String[] { "+", "-", "*", "/" });
+		Stack<Integer> stack = new Stack<>();
 
 		for (String token : tokens) {
-
 			if (!operators.contains(token)) {
 				int currentVal = Integer.parseInt(token);
 				stack.push(currentVal);
@@ -36,9 +32,7 @@ public class RPN {
 				}
 			}
 		}
-
 		return stack.pop().intValue();
-
 	}
 
 	int compute(int val1, int val2, String operator) {

@@ -21,8 +21,7 @@ public class Triangle {
 	public ArrayList<ArrayList<Integer>> generate(int numRows) {
 
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>> ();
-		for(int i = 0; i < numRows; i++)
-		{
+		for(int i = 0; i < numRows; i++) {
 			if(i == 0){
 				ArrayList<Integer> x1 = new ArrayList<Integer>(Arrays.asList( new Integer[] {1}));
 				result.add(x1);
@@ -56,8 +55,7 @@ public class Triangle {
 		return result;
 	}
 	
-	public void print(ArrayList<ArrayList<Integer>> result)
-	{
+	public void print(ArrayList<ArrayList<Integer>> result) {
 		System.out.println("[");
 		
 		for(ArrayList<Integer> row: result)
