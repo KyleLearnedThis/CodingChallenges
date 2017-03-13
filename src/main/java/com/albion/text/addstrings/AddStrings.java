@@ -11,17 +11,14 @@ public class AddStrings {
         StringBuilder sb = new StringBuilder();
 
         while (i >= 0 || j >= 0 || carry == 1) {
-            int a, b;
+            int a = 0;
             if(i >= 0) {
                 a = num1Array[i--] - '0';
-            } else {
-                a = 0;
             }
 
+            int b = 0;
             if(j >= 0) {
                b = num2Array[j--] - '0';
-            } else {
-                b = 0;
             }
 
             int sum = a + b + carry;
