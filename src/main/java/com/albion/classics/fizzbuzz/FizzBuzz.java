@@ -13,14 +13,13 @@ public class FizzBuzz {
         for(int i = 1; i <= n; i++){
             int x = i;
             String current = "";
-            if(x % 3 == 0 || x % 5 == 0) {
-                if(x % 3 == 0 && x % 5 == 0) {
-                    current = words[2];
-                } else if(x % 3 == 0) {
-                    current = words[0];
-                } else if (x % 5 == 0) {
-                    current = words[1];
-                }
+
+            if(x % 3 == 0 && x % 5 == 0) {
+                current = words[2];
+            } else if(x % 3 == 0) {
+                current = words[0];
+            } else if (x % 5 == 0) {
+                current = words[1];
             } else {
                 current = Integer.toString(i);
             }
