@@ -22,6 +22,7 @@ public class AllPaths {
 	}
 
 	public void dfs(BinarySearchTreeNode<Integer> root, ArrayList<ArrayList<String>> allPaths, ArrayList<String> path){
+
 		path.add(String.valueOf(root.value));
 
 		if(root.left == null && root.right == null){
