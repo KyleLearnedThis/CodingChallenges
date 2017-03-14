@@ -2,16 +2,16 @@ package com.albion.java;
 
 import org.testng.annotations.Test;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class OrderedMapTest {
     @Test
     public void testSortMapByValue() throws Exception {
-        Map<Integer, Integer> map = new TreeMap<>();
-        map.put(9,1);
+        Map<Integer, Integer> map = new LinkedHashMap<>();
         map.put(8,2);
-        map.put(7,3);
+        map.put(9,3);
+        map.put(7,1);
         map.put(6,4);
         map.put(5,5);
         OrderedMap orderedMap = new OrderedMap();
