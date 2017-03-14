@@ -1,4 +1,4 @@
-package com.albion.graphs.salesforce.highway;
+package com.albion.graphs.highway;
 
 import com.albion.common.graph.core.Directions;
 import com.albion.common.graph.core.v2.Edge;
