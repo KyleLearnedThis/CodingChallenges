@@ -21,4 +21,22 @@ public class NthMaximumNumber {
             return resultList.get(2);
         }
     }
+
+    /**
+     * An phone screen question.
+     * @param input
+     * @param k
+     * @return an array of K largest numbers.
+     */
+    public int[] largest(int[] input, int k) {
+        int[] result = new int[k];
+        int len = input.length;
+
+        Arrays.sort(input);
+        for (int i = 0; i < k; i++) {
+            int index = len - k + i;
+            result[i] = input[index];
+        }
+        return result;
+    }
 }

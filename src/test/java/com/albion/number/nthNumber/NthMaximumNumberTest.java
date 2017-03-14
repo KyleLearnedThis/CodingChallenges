@@ -4,7 +4,19 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class NthMaximumNumberTest {
+    @Test
+    public void testLargest() throws Exception {
+        int[] input = {9,8,7,5,6,1,2,4,3};
+        NthMaximumNumber n = new NthMaximumNumber();
+        int[] actual = n.largest(input, 3);
+        int[] expected = {7,8,9};
+        boolean result = Arrays.equals(actual,expected);
+        Assert.assertTrue(result);
+    }
+
     @DataProvider(name = "d01")
     public Object[][] makeDataProvider() {
         int[] x1 = {2,3,1};
