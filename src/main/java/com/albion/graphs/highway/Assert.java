@@ -1,4 +1,4 @@
-package com.albion.graphs.salesforce.highway;
+package com.albion.graphs.highway;
 
 /**
  * This class is implemented for you to make assertions in your tests. See example test.

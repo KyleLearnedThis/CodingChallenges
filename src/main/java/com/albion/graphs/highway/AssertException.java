@@ -1,4 +1,4 @@
-package com.albion.graphs.salesforce.highway;
+package com.albion.graphs.highway;
 
 /**
  * This class is implemented for you to throw assertion exceptions in your tests. See example test.

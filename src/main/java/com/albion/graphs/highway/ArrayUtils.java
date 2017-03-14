@@ -1,4 +1,4 @@
-package com.albion.graphs.salesforce.highway;
+package com.albion.graphs.highway;
 
 
 import java.util.ArrayList;

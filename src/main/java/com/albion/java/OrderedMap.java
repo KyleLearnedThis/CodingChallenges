@@ -14,6 +14,7 @@ public class OrderedMap {
         }
         List<Map.Entry<Integer, Integer>> entryList = new ArrayList<>(map.entrySet());
         Collections.sort(entryList, (o1,o2)->o1.getValue()-o2.getValue());
+        // Collections.sort(entryList, Comparator.comparingInt(x->x.getValue()));
 
         Map<Integer, Integer> x = new LinkedHashMap<>();
         for(Map.Entry<Integer, Integer> entry : entryList) {
