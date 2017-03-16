@@ -8,7 +8,7 @@ public class LongestValidParenthesesTest {
     @DataProvider(name = "dp01")
     public Object[][] makeData() {
         return new Object[][] {
-//                {"(()", 2},
+                {"(()", 2},
                 {")()())", 4}
         };
     }
