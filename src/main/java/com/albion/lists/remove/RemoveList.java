@@ -66,4 +66,26 @@ public class RemoveList extends LinkList {
 
         return head;
     }
+
+    /**
+     * http://www.programcreek.com/2014/04/leetcode-remove-linked-list-elements-java/
+     * @param head
+     * @param val
+     * @return
+     */
+    public ListNode removeAll(ListNode head, int val) {
+        ListNode helper = new ListNode(0);
+        helper.next = head;
+        ListNode p = helper;
+        while(p.next != null){
+            if(p.next.val == val){
+                ListNode next = p.next;
+                p.next = next.next;
+            }else{
+                p = p.next;
+            }
+        }
+        helper.next = null;
+        return head;
+    }
 }

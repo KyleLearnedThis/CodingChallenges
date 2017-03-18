@@ -26,7 +26,7 @@ public class LongestValidParentheses {
         }
         return result;
     }
-    
+
     public int longestValidParenthesesV2(String s) {
         int n = s.length();
         Stack<Integer> stack = new Stack<>();

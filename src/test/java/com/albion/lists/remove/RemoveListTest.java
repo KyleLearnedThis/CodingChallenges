@@ -31,4 +31,18 @@ public class RemoveListTest {
         System.out.println("After");
         list.print();
     }
+
+    @Test
+    public void testRemoveAll() throws Exception {
+        int[] input = {1,2,9,3,4,5,6,9,9,9,9,7,8};
+        RemoveList list = new RemoveList();
+        list.append(input);
+        System.out.println("Before");
+        list.print();
+
+        ListNode head = list.getHead();
+        list.removeAll(head, 9);
+        System.out.println("After");
+        list.print();
+    }
 }
