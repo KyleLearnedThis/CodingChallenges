@@ -35,4 +35,16 @@ public class CoinChangeTest {
         int actual = coinChange.iterative(coins, amount);
         Assert.assertEquals(actual, expectedCoins);
     }
+
+    @Test
+    public void testCountWaysV2() {
+        int arr[] = {1, 2, 3};
+        int m = arr.length;
+        int n = 4;
+        int expected = 4;
+
+        CoinChange coinChange = new CoinChange();
+        int actual = coinChange.countWaysV2(arr, m, n);
+        Assert.assertEquals(actual,expected);
+    }
 }

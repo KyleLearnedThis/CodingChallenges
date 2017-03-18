@@ -24,7 +24,7 @@ public class BinaryTreePathSum {
     public void dfs(BinarySearchTreeNode<Integer> t, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list){
         BinarySearchTreeNode<Integer> left = t.getLeft();
         BinarySearchTreeNode<Integer> right = t.getRight();
-        if(left==null && right==null && sum==0){
+        if(left == null && right == null && sum == 0){
             ArrayList<Integer> temp = new ArrayList<>();
             temp.addAll(list);
             result.add(temp);
