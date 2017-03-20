@@ -68,19 +68,11 @@ public class BinaryTreePathSumTest {
 	public void testMatchingSum(BinarySearchTreeNode<Integer> root, int sum, ArrayList<ArrayList> expected) {
 
 		BinaryTreePrinter.printNode(root);
-		BinaryTreePathSum btps = new BinaryTreePathSum();
-		ArrayList<ArrayList<Integer>> actual = btps.pathSum(root, sum);
+		BinaryTreePathSum ps = new BinaryTreePathSum();
+		ArrayList<ArrayList<Integer>> actual = ps.pathSum(root, sum);
 
 		Assert.assertEquals(expected.size(), actual.size());
-
-		for(ArrayList<Integer> list : actual) {
-			System.out.println("=======");
-			for(Integer i : list) {
-				System.out.print(i + " ");
-			}
-			System.out.println("");
-			System.out.println("=======");
-		}
+		ps.printAllPaths(actual);
 
 		for (int i = 0; i < expected.size(); i++) {
 			ArrayList<Integer> x = expected.get(i);
