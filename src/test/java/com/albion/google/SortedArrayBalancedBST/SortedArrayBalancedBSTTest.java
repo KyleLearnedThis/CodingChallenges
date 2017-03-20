@@ -9,7 +9,7 @@ public class SortedArrayBalancedBSTTest {
     public void testSortedArrayToBST() throws Exception {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         SortedArrayBalancedBST s = new SortedArrayBalancedBST();
-        TreeNode root = s.sortedArrayToBST(nums);
+        TreeNode root = s.sortedArrayToBST(nums, 0, nums.length -1);
         BinaryTreePrinter.printNode(root);
     }
 }

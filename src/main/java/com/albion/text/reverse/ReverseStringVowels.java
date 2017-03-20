@@ -1,4 +1,4 @@
-package com.albion.text.reversevowels;
+package com.albion.text.reverse;
 
 import java.util.Arrays;
 

@@ -7,7 +7,7 @@ import com.albion.core.ListNode;
  * http://www.programcreek.com/2014/05/leetcode-remove-nth-node-from-end-of-list-java/
  */
 public class RemoveList extends LinkList {
-    public ListNode removeNthFromEndV1(ListNode head, int n) {
+    public ListNode removeNthFromEndV1(ListNode head, int k) {
         if(head == null) {
             return null;
         }
@@ -21,19 +21,19 @@ public class RemoveList extends LinkList {
         }
 
         //if remove first node
-        int fromStart = len-n+1;
+        int fromStart = len - k + 1;
         if(fromStart==1) {
             return head.next;
         }
         //remove non-first node
         p = head;
-        int i=0;
-        while(p!=null){
+        int i = 0;
+        while(p != null){
             i++;
-            if(i==fromStart-1){
+            if(i == fromStart - 1){
                 p.next = p.next.next;
             }
-            p=p.next;
+            p = p.next;
         }
 
         return head;
