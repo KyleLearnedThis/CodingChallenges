@@ -48,7 +48,7 @@ public class ReorderListTest {
 	public void reorderList(ListNode head) {
 		
 //		print(head);
-		Solution s = new Solution();
+		ReorderList s = new ReorderList();
 		s.reorderList(head);
 		System.out.println("====================");
 		System.out.println("here::::");

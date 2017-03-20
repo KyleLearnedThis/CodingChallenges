@@ -1,7 +1,7 @@
 package com.albion.lists.plusone;
 
 /**
- * https://leetcode.com/problems/plus-one/#/description
+ * https://leetcode.com/problems/plus-one/
  */
 public class PlusOne {
     public int[] plusOne(int[] digits) {
