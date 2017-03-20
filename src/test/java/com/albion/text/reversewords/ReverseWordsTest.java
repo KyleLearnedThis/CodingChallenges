@@ -1,5 +1,6 @@
 package com.albion.text.reversewords;
 
+import com.albion.text.reverse.ReverseWords;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class ReverseWordsTest {
 
 	@Test(dataProvider = "data01")
 	public void reverseWords(String input, String expected) {
-		Solution s = new Solution();
+		ReverseWords s = new ReverseWords();
 		String actual = s.reverseWords(input);
 
 		Assert.assertEquals(actual, expected);

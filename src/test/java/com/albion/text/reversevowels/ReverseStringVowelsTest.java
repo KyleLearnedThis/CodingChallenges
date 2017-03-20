@@ -1,5 +1,6 @@
 package com.albion.text.reversevowels;
 
+import com.albion.text.reverse.ReverseStringVowels;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
