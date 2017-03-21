@@ -81,19 +81,4 @@ public class BinaryTreePathSumTest {
 			Assert.assertTrue(result);
 		}
 	}
-
-	@Test
-	public void testMaxPathSum() throws Exception {
-		BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<>(1);
-		BinarySearchTreeNode<Integer> l = new BinarySearchTreeNode<>(2);
-		BinarySearchTreeNode<Integer> r = new BinarySearchTreeNode<>(3);
-		root.left = l;
-		root.right = r;
-
-		int expected = 6;
-		BinaryTreePrinter.printNode(root);
-		BinaryTreePathSum b = new BinaryTreePathSum();
-		int actual = b.maxPathSum(root);
-		Assert.assertEquals(actual, expected);
-	}
 }
