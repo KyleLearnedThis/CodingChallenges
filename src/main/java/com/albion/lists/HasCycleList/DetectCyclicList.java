@@ -2,7 +2,7 @@ package com.albion.lists.HasCycleList;
 
 import com.albion.core.ListNode;
 
-public class Solution {
+public class DetectCyclicList {
 	public boolean hasCycle(ListNode head) {
 		if (head == null || head.next == null) {
 			return false;
