@@ -24,7 +24,7 @@ public class MaxPathSumTest {
         int expected = 42;
         int actual = ms.maxPathSum(root);
 
-        System.out.println("maximum path sum is : " + actual);
+        System.out.println("maximum path sums is : " + actual);
         Assert.assertEquals(actual,expected);
     }
 }

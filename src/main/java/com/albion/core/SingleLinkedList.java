@@ -1,7 +1,14 @@
 package com.albion.core;
 
-public class LinkList {
+public class SingleLinkedList {
     public ListNode head = null;
+
+    public SingleLinkedList() {
+    }
+
+    public SingleLinkedList(int[] input) {
+        append(input);
+    }
 
     public ListNode append(int val) {
         ListNode cur = head;

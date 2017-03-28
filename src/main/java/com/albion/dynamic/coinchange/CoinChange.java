@@ -76,7 +76,7 @@ public class CoinChange {
     }
 
     private int helper(int[] coins, int rem, int[] count){
-        // rem: remaining coins after the last step; count[rem]: minimum number of coins to sum up to rem
+        // rem: remaining coins after the last step; count[rem]: minimum number of coins to sums up to rem
         if(rem<0) return -1; // not valid
         if(rem==0) return 0; // completed
         if(count[rem-1] != 0) return count[rem-1]; // already computed, so reuse
@@ -132,7 +132,7 @@ public class CoinChange {
             if (m <=0 && n >= 1) {
                 return 0;
             }
-            // count is sum of solutions (i) including S[m-1] (ii) excluding S[m-1]
+            // count is sums of solutions (i) including S[m-1] (ii) excluding S[m-1]
             return countWaysV2( S, m - 1, n ) + countWaysV2( S, m, n-S[m-1] );
     }
 }

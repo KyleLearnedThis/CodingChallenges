@@ -3,11 +3,11 @@ package com.albion.core;
 import junit.framework.Assert;
 import org.testng.annotations.Test;
 
-public class LinkListTest {
+public class SingleLinkedListTest {
     @Test
     public void testDelete() throws Exception {
         int[] input = {1,2,3,4,5,6,7,8};
-        LinkList list = new LinkList();
+        SingleLinkedList list = new SingleLinkedList();
         list.append(input);
         System.out.println("BEFORE");
         list.print();

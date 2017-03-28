@@ -1,12 +1,12 @@
 package com.albion.lists.remove;
 
-import com.albion.core.LinkList;
+import com.albion.core.SingleLinkedList;
 import com.albion.core.ListNode;
 
 /**
  * http://www.programcreek.com/2014/05/leetcode-remove-nth-node-from-end-of-list-java/
  */
-public class RemoveList extends LinkList {
+public class RemoveList extends SingleLinkedList {
     public ListNode removeNthFromEndV1(ListNode head, int k) {
         if(head == null) {
             return null;

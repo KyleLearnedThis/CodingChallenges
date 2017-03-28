@@ -1,5 +1,7 @@
 package com.albion.lists.merge;
 
+import com.albion.core.SingleLinkedList;
+import com.albion.core.ListNode;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,6 +9,34 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 
 public class MergeSortedDataTest {
+    @Test
+    public void testMergeTwoListsV1() throws Exception {
+        int[] a1 = {2,3,4,5};
+        int[] b1 = {4,5,6,7,8};
+
+        SingleLinkedList list1 = new SingleLinkedList(a1);
+        SingleLinkedList list2 = new SingleLinkedList(b1);
+        MergeSortedData m = new MergeSortedData();
+
+        System.out.println("[Version 1]");
+        ListNode n1 = m.mergeTwoListsV1(list1.getHead(), list2.getHead());
+        printList(n1);
+    }
+
+    @Test
+    public void testMergeTwoListsV2() throws Exception {
+        int[] a1 = {2,3,4,5};
+        int[] b1 = {4,5,6,7,8};
+
+        SingleLinkedList list1 = new SingleLinkedList(a1);
+        SingleLinkedList list2 = new SingleLinkedList(b1);
+        MergeSortedData m = new MergeSortedData();
+
+        System.out.println("[Version 2]");
+        ListNode n1 = m.mergeTwoListsV2(list1.getHead(), list2.getHead());
+        printList(n1);
+    }
+
 
     @DataProvider(name = "dp01")
     public Object[][] makeData(){
@@ -38,5 +68,12 @@ public class MergeSortedDataTest {
         int[] actual = m.mergeSortedArray(a, b);
         boolean result = Arrays.equals(actual, expected);
         Assert.assertTrue(result);
+    }
+
+    private void printList(ListNode node){
+        for(ListNode cur = node; cur != null; cur = cur.next) {
+            System.out.print(" " + cur.val);
+        }
+        System.out.println("");
     }
 }
