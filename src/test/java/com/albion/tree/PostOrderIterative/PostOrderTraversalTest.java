@@ -25,8 +25,8 @@ public class PostOrderTraversalTest {
 	public void postorderTraversal(TreeNode root) {
 
 		ArrayList<Integer> result = new ArrayList<Integer>();
-		Solution s = new Solution();
-		result = s.postorderTraversal(root);
+		PostOrderIterative s = new PostOrderIterative();
+		result = s.postOrderTraversal(root);
 		print(result);
 	}
 
@@ -34,8 +34,8 @@ public class PostOrderTraversalTest {
 	public void postorderTraversal2(TreeNode root) {
 
 		ArrayList<Integer> result = new ArrayList<Integer>();
-		Solution s = new Solution();
-		s.postorderTraversal2(root, result);
+		PostOrderIterative s = new PostOrderIterative();
+		s.postOrderTraversalV2(root, result);
 		print(result);
 	}
 
