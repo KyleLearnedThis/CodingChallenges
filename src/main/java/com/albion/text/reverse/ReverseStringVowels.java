@@ -11,9 +11,9 @@ public class ReverseStringVowels {
 	public String reverseVowels(String s) {
 		String vowelsString = "aeiouAEIOU";
 
-		Stack<Character> reversedVowelStack = new Stack<Character>();
+		Stack<Character> reversedVowelStack = new Stack<>();
 		Character[] charObjectArray = vowelsString.chars().mapToObj(c -> (char)c).toArray(Character[]::new);
-		Set<Character> vowelSet = new TreeSet<Character>(Arrays.asList(charObjectArray));
+		Set<Character> vowelSet = new TreeSet<>(Arrays.asList(charObjectArray));
 
 		for(char c: s.toCharArray()){
 			if(vowelSet.contains(c)){

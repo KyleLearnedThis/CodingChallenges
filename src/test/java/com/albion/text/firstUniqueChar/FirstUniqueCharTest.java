@@ -19,7 +19,7 @@ public class FirstUniqueCharTest {
     @Test(dataProvider = "dp01")
     public void testFirstUniqChar(String input, int expected) throws Exception {
         FirstUniqueChar f = new FirstUniqueChar();
-        int actual = f.firstUniqChar(input);
+        int actual = f.firstUniqueCharacter(input);
         Assert.assertEquals(actual, expected);
     }
 
