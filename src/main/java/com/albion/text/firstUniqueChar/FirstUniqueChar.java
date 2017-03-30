@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FirstUniqueChar {
-    public int firstUniqChar(String s) {
+    public int firstUniqueCharacter(String s) {
         if(s == null || s.isEmpty()) {
             return -1;
         }

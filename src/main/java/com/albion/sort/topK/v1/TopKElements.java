@@ -1,4 +1,4 @@
-package com.albion.sort.topK;
+package com.albion.sort.topK.v1;
 
 import java.util.*;
 
@@ -16,14 +16,10 @@ public class TopKElements {
 				freq.put(key, 1);
 			}
 		}
+
 		List<Map.Entry<Integer, Integer>> list = new ArrayList<>(freq.entrySet());
-
-		Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>(){
-			public int compare( Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2 ){
-				return (o2.getValue()).compareTo(o1.getValue());
-			}
-		});
-
+        // Collections.sort(list, (o1,o2)->(o2.getValue().compareTo(o1.getValue())));
+		Collections.sort(list, (o1,o2)->(o2.getValue()-o1.getValue()));
 		List<Integer> result = new ArrayList<>();
 
 		for(int i = 0; i < k; i++){
