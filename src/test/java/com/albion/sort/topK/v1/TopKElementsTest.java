@@ -1,4 +1,4 @@
-package com.albion.sort.topK;
+package com.albion.sort.topK.v1;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
