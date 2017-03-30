@@ -11,13 +11,11 @@ public class Solution {
 			x[i] = new Integer(numbers[i]);
 		}
 
-		List<Integer> list = new ArrayList<Integer>(Arrays.asList(x));
+		List<Integer> list = new ArrayList<>(Arrays.asList(x));
 
 		for (int i = 0; i < list.size(); i++) {
-			List<Integer> cloneList = new ArrayList<Integer>(list);
-			Integer current = cloneList.remove(i);
+			List<Integer> cloneList = new ArrayList<>(list);
 			for (int j = 0; j < cloneList.size(); j++) {
-				Integer foo = cloneList.get(j);
 				if (i + j == target) {
 					result[0] = i;
 					result[1] = j;

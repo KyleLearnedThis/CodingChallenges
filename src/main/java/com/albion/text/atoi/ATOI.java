@@ -5,6 +5,13 @@ package com.albion.text.atoi;
  * https://leetcode.com/problems/string-to-integer-atoi/
  */
 public class ATOI {
+	/**
+	 * LeetCode is requirement now checks +/-, invalid inputs, scientific notations.
+	 * So it is no longer a easy tier question.
+	 * So atoiV2 is the likely question to be asked in the interviews
+	 * @param str
+	 * @return integer representation of the the string.
+	 */
 	public int atoi(String str) {
 		if("".equals(str)){
 			return 0;
@@ -87,5 +94,24 @@ public class ATOI {
 	public int countDigits(int value) {
 		int digit = (int) Math.ceil(Math.log10(value + 1));
 		return digit;
+	}
+
+	/**
+	 * Simpler question, only checks for positive integer or returns -1 if has non digits
+	 * @param input
+	 * @return integer representation of the string. also doesn't check for overflow.
+	 */
+	public int atoiV2(String input){
+		int result = 0;
+		int base = 1;
+		for (int i = input.length() - 1; i >= 0; i--) {
+			int cur = input.charAt(i) - '0';
+			if(cur >= 10 || cur < 0){
+				return -1;
+			}
+			result = result + base * cur;
+			base = base * 10;
+		}
+		return result;
 	}
 }
