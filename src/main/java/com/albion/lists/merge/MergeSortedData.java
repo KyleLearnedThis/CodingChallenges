@@ -4,6 +4,12 @@ import com.albion.core.ListNode;
 
 public class MergeSortedData {
 
+    /**
+     * https://leetcode.com/problems/merge-two-sorted-lists/
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode mergeTwoListsV1(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
         ListNode p = head;
