@@ -46,4 +46,16 @@ public class SortUtils {
         }
         System.out.println("");
     }
+
+    public static void sortReverse(int[] input) {
+        Arrays.sort(input);
+        int len = input.length;
+        int mid = len/2;
+
+        for (int i = 0; i <= mid; i++) {
+            int temp = input[i];
+            input[i] = input[len-i-1];
+            input[len-i-1] = temp;
+        }
+    }
 }

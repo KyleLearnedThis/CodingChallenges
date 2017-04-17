@@ -20,49 +20,39 @@ import java.util.Arrays;
 public class Triangle {
 	public ArrayList<ArrayList<Integer>> generate(int numRows) {
 
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>> ();
+		ArrayList<ArrayList<Integer>> result = new ArrayList<> ();
 		for(int i = 0; i < numRows; i++) {
-			if(i == 0){
-				ArrayList<Integer> x1 = new ArrayList<Integer>(Arrays.asList( new Integer[] {1}));
+			if (i == 0) {
+				ArrayList<Integer> x1 = new ArrayList<>(Arrays.asList(new Integer[]{1}));
 				result.add(x1);
-			}
-			else  if( i == 1){
-				ArrayList<Integer> x2= new ArrayList<Integer>(Arrays.asList( new Integer[] {1,1}));
+			} else if (i == 1) {
+				ArrayList<Integer> x2 = new ArrayList<>(Arrays.asList(new Integer[]{1, 1}));
 				result.add(x2);
-			}
-			else{
-				ArrayList<Integer> x3 = new ArrayList<Integer>();
-				
-				for(int j = 0; j < i+1; j++)
-				{
+			} else {
+				ArrayList<Integer> x3 = new ArrayList<>();
 
-					if(j == 0 || j == i ){
+				for (int j = 0; j < i + 1; j++) {
+					if (j == 0 || j == i) {
 						x3.add(1);
-					}
-					else{
-						int mom_idx = j -1;
-						int dad_idx = j;
-						int mom = result.get(i-1).get(mom_idx);
-						int dad = result.get(i-1).get(dad_idx);
-						x3.add(mom+dad);
-						
+					} else {
+						int leftIndex = j - 1;
+						int rightIndex = j;
+						int left = result.get(i - 1).get(leftIndex);
+						int right = result.get(i - 1).get(rightIndex);
+						x3.add(left + right);
 					}
 				}
 				result.add(x3);
 			}
 		}
-		
 		return result;
 	}
 	
 	public void print(ArrayList<ArrayList<Integer>> result) {
 		System.out.println("[");
 		
-		for(ArrayList<Integer> row: result)
-		{
-//			ArrayList<Integer> i = row;
-			for(Integer j: row)
-			{
+		for(ArrayList<Integer> row: result) {
+			for(Integer j: row) {
 				System.out.print(j+ " ");
 			}
 			System.out.println("");
