@@ -5,8 +5,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class PalindromeTest {
+    @Test
+    public void testCanBeConvertedIntoPalindrome() throws Exception {
+    	String input = "abbbbcc";
+    	boolean expected = true;
+    	Palindrome p = new Palindrome();
+    	boolean actual = p.canBeConvertedIntoPalindrome(input);
+    	Assert.assertEquals(expected,actual);
+    }
 
-	@DataProvider(name = "dp02")
+    @DataProvider(name = "dp02")
 	public Object[][] makeDataV2() {
 		return new Object[][] {
 				{"abcba", true},

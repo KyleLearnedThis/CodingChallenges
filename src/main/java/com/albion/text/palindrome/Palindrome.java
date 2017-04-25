@@ -1,5 +1,8 @@
 package com.albion.text.palindrome;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Palindrome {
 
 	public static int extract(int x, int digitIndex){
@@ -77,6 +80,35 @@ public class Palindrome {
 				return false;
 			}
 		}
+		return true;
+	}
+
+	public boolean canBeConvertedIntoPalindrome(String input) {
+		Map<Character, Integer> freq = new HashMap<>();
+		for (int i = 0; i < input.length(); i++) {
+			char c = input.charAt(i);
+
+			if(freq.containsKey(c)){
+				int count = freq.get(c);
+				count++;
+				freq.put(c, count);
+			} else {
+				freq.put(c, 1);
+			}
+		}
+
+		boolean hasOneOddValue = false;
+		for(Map.Entry<Character, Integer> entry : freq.entrySet()){
+			int count = entry.getValue();
+			if((count %2) == 1) {
+				if(hasOneOddValue == false) {
+					hasOneOddValue = true;
+				} else {
+					return false;
+				}
+			}
+		}
+
 		return true;
 	}
 }
