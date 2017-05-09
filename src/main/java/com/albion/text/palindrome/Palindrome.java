@@ -26,6 +26,33 @@ public class Palindrome {
 		return true;
 	}
 
+
+	/**
+	 * https://leetcode.com/problems/palindrome-number
+	 */
+	public static boolean isPalindromeNumberV2(int x) {
+		if(x == Integer.MIN_VALUE || x == Integer.MAX_VALUE){
+			return false;
+		}
+
+		if(x < 0) {
+			return false;
+		}
+
+		String y = String.valueOf(x);
+		char[] input = y.toCharArray();
+		int size = input.length;
+
+		for (int i = 0; i <= size/2; i++) {
+			int l = input[i] - '0';
+			int r = input[size - i - 1] - '0';
+			if(l != r) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	private String formatString(String s){
 		if(s == null || s.isEmpty() || s.length() == 1){
 			return s;
