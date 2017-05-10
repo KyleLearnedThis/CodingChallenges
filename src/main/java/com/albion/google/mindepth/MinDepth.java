@@ -1,4 +1,4 @@
-package com.albion.google.pathsum;
+package com.albion.google.mindepth;
 
 import com.albion.common.tree.node.BinarySearchTreeNode;
 
@@ -14,6 +14,7 @@ public class MinDepth {
        BinarySearchTreeNode<Integer> right = root.getRight();
        int l = minDepth(left);
        int r = minDepth(right);
+
        return (l == 0 || r == 0) ? l + r + 1: Math.min(l,r) + 1;
    }
 }

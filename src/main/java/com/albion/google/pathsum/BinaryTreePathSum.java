@@ -16,30 +16,32 @@ public class BinaryTreePathSum {
 
 		ArrayList<Integer> list = new ArrayList<>();
 		list.add(root.value);
-		dfs(root, sum-root.value, result, list);
+		dfs(root, sum - root.value, result, list);
 		return result;
 	}
 
 	public void dfs(BinarySearchTreeNode<Integer> t, int sum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list){
 		BinarySearchTreeNode<Integer> left = t.getLeft();
 		BinarySearchTreeNode<Integer> right = t.getRight();
+
 		if(left == null && right == null && sum == 0){
 			ArrayList<Integer> temp = new ArrayList<>();
 			temp.addAll(list);
 			result.add(temp);
 		}
+
 		//search path of left node
 		if(left != null){
 			list.add(left.value);
 			dfs(left, sum-left.value, result, list);
-			list.remove(list.size()-1);
+			list.remove(list.size() - 1);
 		}
 
 		//search path of right node
 		if(right!=null){
 			list.add(right.value);
 			dfs(right, sum-t.right.value, result, list);
-			list.remove(list.size()-1);
+			list.remove(list.size() - 1);
 		}
 	}
 

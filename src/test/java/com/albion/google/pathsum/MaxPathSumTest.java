@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class MaxPathSumTest {
 
     @Test
-    public void testMaxPathSumV2() throws Exception {
+    public void testMaxPathSum() throws Exception {
         BinarySearchTreeNode<Integer> root = new BinarySearchTreeNode<>(10);
         root.left = new BinarySearchTreeNode<>(2);
         root.right = new BinarySearchTreeNode<>(10);
