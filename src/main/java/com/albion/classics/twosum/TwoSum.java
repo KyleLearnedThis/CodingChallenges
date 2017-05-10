@@ -2,7 +2,7 @@ package com.albion.classics.twosum;
 
 import java.util.*;
 
-public class Solution {
+public class TwoSum {
 	public int[] twoSum(int[] numbers, int target) {
 
 		int result[] = new int[2];

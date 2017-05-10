@@ -22,7 +22,7 @@ public class TwoSumTest {
 	}
   @Test(dataProvider="twoSumData")
   public void twoSum(int[] numbers, int target, int[] result) {
-	  Solution sol = new Solution();
+	  TwoSum sol = new TwoSum();
 	  int[] actual = sol.twoSum(numbers, target);
 	  Arrays.equals(actual, result);
   }
