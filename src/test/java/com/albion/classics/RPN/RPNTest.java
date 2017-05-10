@@ -1,21 +1,26 @@
 package com.albion.classics.RPN;
 
-import com.albion.common.tree.BinaryTreePrinter;
-import com.albion.common.tree.node.BinarySearchTreeNode;
-import com.albion.tree.heightBST.HeightBalancedTree;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-/**
- * Created by dsch_iter on 12/30/16.
- */
 public class RPNTest {
-    @Test
-    public void testTree() {
+    @DataProvider(name = "dp01")
+    public Object[][] makeData() {
+        String[] x1 = {"2", "1", "+", "3", "*"};
+        int y1 = 9;
+        String[] x2 = {"4", "13", "5", "/", "+"};
+        int y2 = 6;
+        return new Object[][] {
+                {x1, y1},
+                {x2, y2}
+        };
+    }
 
-        int[] nums = {1,2,3,4,5,6,7,8,9,10,11};
-        HeightBalancedTree hbt = new HeightBalancedTree();
-        BinarySearchTreeNode<Integer> root = hbt.sortedArrayToBST(nums);
-        BinaryTreePrinter btp = new BinaryTreePrinter();
-        btp.printNode(root);
+    @Test(dataProvider = "dp01")
+    public void testEvalRPN(String[] input, int expected) throws Exception {
+        RPN rpn = new RPN();
+        int actual = rpn.evalRPN(input);
+        Assert.assertEquals(actual, expected);
     }
 }
