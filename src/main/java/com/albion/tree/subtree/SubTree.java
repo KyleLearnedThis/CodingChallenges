@@ -3,7 +3,7 @@ package com.albion.tree.subtree;
 import com.albion.core.TreeNode;
 
 /**
- * https://leetcode.com/problems/subtree-of-another-tree/#/description
+ * https://leetcode.com/problems/subtree-of-another-tree
  */
 public class SubTree {
     public boolean isSubtree(TreeNode s, TreeNode t) {

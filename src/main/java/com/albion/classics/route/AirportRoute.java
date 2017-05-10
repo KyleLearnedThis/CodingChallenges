@@ -42,4 +42,14 @@ public class AirportRoute {
         }
         return "";
     }
+
+    public String findStartingPointV2(Map<String, String> trips){
+        for(Map.Entry<String, String> entry : trips.entrySet()){
+            String source = entry.getKey();
+            if(!trips.containsValue(source)){
+                return source;
+            }
+        }
+        return "";
+    }
 }

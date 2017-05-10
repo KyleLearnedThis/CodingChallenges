@@ -12,10 +12,9 @@ public class SubTreeTest {
      *
      *       3
             / \
-           4   5
-         / \
-        1   2
-
+           4  5
+          / \
+         1  2
      */
     public TreeNode makeTreeV1() {
         TreeNode a = new TreeNode(3);
@@ -30,6 +29,11 @@ public class SubTreeTest {
         return a;
     }
 
+    /**
+     * 4
+      / \
+     1  2
+     */
     public TreeNode makeTreeV2() {
         TreeNode b = new TreeNode(4);
         TreeNode d = new TreeNode(1);

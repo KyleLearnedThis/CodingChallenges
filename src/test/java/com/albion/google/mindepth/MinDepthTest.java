@@ -1,4 +1,4 @@
-package com.albion.google.pathsum;
+package com.albion.google.mindepth;
 
 import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.node.BinarySearchTreeNode;
