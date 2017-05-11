@@ -29,7 +29,7 @@ public class KthSmallestInMatrix {
         int j=0;
         int count = 0;
 
-        while(i>=0&&j<m){
+        while((i >= 0) && (j < m)){
             if(matrix[i][j]<=target){
                 count += i+1;
                 j++;

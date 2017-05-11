@@ -39,4 +39,13 @@ public class NthMaximumNumber {
         }
         return result;
     }
+
+    public int max(int[] nums, int n) {
+        Arrays.sort(nums);
+        if(nums.length > n){
+            return nums[n - 1];
+        } else {
+            return nums[nums.length - 1];
+        }
+    }
 }
