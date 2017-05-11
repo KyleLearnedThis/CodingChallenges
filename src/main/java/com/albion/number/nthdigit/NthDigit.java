@@ -21,7 +21,7 @@ public class NthDigit {
         return Character.getNumericValue(s.charAt((n - 1) % len));
     }
 
-    // This is susceptible to learge memory usage when n is large.
+    // This is susceptible to large memory usage when n is large.
     public int findNthDigitV2(int n) {
         StringBuffer buffer = new StringBuffer();
         for (int i = 1; i <= n; i++) {

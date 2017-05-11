@@ -8,16 +8,16 @@ import java.util.Stack;
  */
 public class ValidParentheses {
     public boolean isValid(String input){
-        Stack<Character> s1 = new Stack<>();
+        Stack<Character> stack = new Stack<>();
         char[] array = input.toCharArray();
 
         for(int i = 0; i < array.length; i++){
             char ch = array[i];
             if(ch == '(' || ch == '{' || ch == '[' ){
-                s1.push(ch);
+                stack.push(ch);
             } else if(ch == ')' || ch == '}' || ch == ']') {
                 try{
-                    char x = s1.pop();
+                    char x = stack.pop();
                     if( ch == ')' && x != '(') {
                         return false;
                     } else if (ch == '}' && x != '{') {
@@ -30,6 +30,6 @@ public class ValidParentheses {
                 }
             }
         }
-        return s1.size() == 0;
+        return stack.size() == 0;
     }
 }

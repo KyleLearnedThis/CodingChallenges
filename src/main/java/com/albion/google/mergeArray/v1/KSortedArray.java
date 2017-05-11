@@ -1,4 +1,4 @@
-package com.albion.google.mergeArray;
+package com.albion.google.mergeArray.v1;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
