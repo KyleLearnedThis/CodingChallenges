@@ -25,23 +25,22 @@ public class BinaryTreePathSum {
 		BinarySearchTreeNode<Integer> right = t.getRight();
 
 		if(left == null && right == null && sum == 0){
-			ArrayList<Integer> temp = new ArrayList<>();
-			temp.addAll(list);
+			ArrayList<Integer> temp = new ArrayList<>(list);
 			result.add(temp);
 		}
 
 		//search path of left node
 		if(left != null){
-			list.add(left.value);
-			dfs(left, sum-left.value, result, list);
-			list.remove(list.size() - 1);
+			ArrayList<Integer> leftList = new ArrayList<>(list);
+			leftList.add(left.value);
+			dfs(left, sum - left.value, result, leftList);
 		}
 
 		//search path of right node
-		if(right!=null){
-			list.add(right.value);
-			dfs(right, sum-t.right.value, result, list);
-			list.remove(list.size() - 1);
+		if(right != null){
+			ArrayList<Integer> rightList = new ArrayList<>(list);
+			rightList.add(right.value);
+			dfs(right, sum - t.right.value, result, rightList);
 		}
 	}
 
