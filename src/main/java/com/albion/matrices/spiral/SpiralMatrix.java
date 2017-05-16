@@ -13,45 +13,47 @@ public class SpiralMatrix {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return result;
         }
-        int m = matrix.length;
-        int n = matrix[0].length;
-        int i, k = 0, l = 0;
+        int d = matrix.length;
+        int r = matrix[0].length;
+        int i;
+        int u = 0;
+        int l = 0;
 
     /**
-     * k - starting row index
-     * m - ending row index
+     * u - starting row index
+     * d - ending row index
      * l - starting column index
-     * n - ending column index
+     * r - ending column index
      * i - iterator
      **/
 
-        while (k < m && l < n) {
+        while (u < d && l < r) {
         /* Print the first row from the remaining rows */
-            for (i = l; i < n; ++i) {
-                // System.out.print(" " + matrix[k][i]);
-                result.add(matrix[k][i]);
+            for (i = l; i < r; ++i) {
+                // System.out.print(" " + matrix[u][i]);
+                result.add(matrix[u][i]);
             }
-            k++;
+            u++;
 
         /* Print the last column from the remaining columns */
-            for (i = k; i < m; ++i) {
-                // System.out.print(" " + matrix[i][n - 1]);
-                result.add(matrix[i][n-1]);
+            for (i = u; i < d; ++i) {
+                // System.out.print(" " + matrix[i][r - 1]);
+                result.add(matrix[i][r-1]);
             }
-            n--;
+            r--;
 
         /* Print the last row from the remaining rows */
-            if (k < m) {
-                for (i = n - 1; i >= l; --i) {
-                    // System.out.print(" " + matrix[m - 1][i]);
-                    result.add(matrix[m-1][i]);
+            if (u < d) {
+                for (i = r - 1; i >= l; --i) {
+                    // System.out.print(" " + matrix[d - 1][i]);
+                    result.add(matrix[d-1][i]);
                 }
-                m--;
+                d--;
             }
 
         /* Print the first column from the remaining columns */
-            if (l < n) {
-                for (i = m - 1; i >= k; --i) {
+            if (l < r) {
+                for (i = d - 1; i >= u; --i) {
                     // System.out.print(" " + matrix[i][l]);
                     result.add(matrix[i][l]);
                 }
