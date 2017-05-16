@@ -9,13 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ProcessTreeTest {
-    /**
-     * [1,3,10,5]
-     [3,0,5,3]
-     5
-     * @throws Exception
-     */
-
+    
     @DataProvider(name = "dp01")
     public Object[][] makeData() {
         int[] x1 = {1,3,10,5};
