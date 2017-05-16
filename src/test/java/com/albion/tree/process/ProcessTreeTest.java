@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ProcessTreeTest {
-    
+
     @DataProvider(name = "dp01")
     public Object[][] makeData() {
         int[] x1 = {1,3,10,5};
