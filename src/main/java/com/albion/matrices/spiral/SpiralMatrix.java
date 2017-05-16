@@ -28,32 +28,32 @@ public class SpiralMatrix {
      **/
 
         while (u < d && l < r) {
-        /* Print the first row from the remaining rows */
-            for (i = l; i < r; ++i) {
+            /* Print the first row from the remaining rows */
+            for (i = l; i < r; i++) {
                 // System.out.print(" " + matrix[u][i]);
                 result.add(matrix[u][i]);
             }
             u++;
 
-        /* Print the last column from the remaining columns */
-            for (i = u; i < d; ++i) {
+            /* Print the last column from the remaining columns */
+            for (i = u; i < d; i++) {
                 // System.out.print(" " + matrix[i][r - 1]);
                 result.add(matrix[i][r-1]);
             }
             r--;
 
-        /* Print the last row from the remaining rows */
+            /* Print the last row from the remaining rows */
             if (u < d) {
-                for (i = r - 1; i >= l; --i) {
+                for (i = r - 1; i >= l; i--) {
                     // System.out.print(" " + matrix[d - 1][i]);
                     result.add(matrix[d-1][i]);
                 }
                 d--;
             }
 
-        /* Print the first column from the remaining columns */
+            /* Print the first column from the remaining columns */
             if (l < r) {
-                for (i = d - 1; i >= u; --i) {
+                for (i = d - 1; i >= u; i--) {
                     // System.out.print(" " + matrix[i][l]);
                     result.add(matrix[i][l]);
                 }
