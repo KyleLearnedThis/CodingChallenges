@@ -5,8 +5,8 @@ import com.albion.common.tree.node.BinarySearchTreeNode;
 public class HeightBalancedTree {
 	public BinarySearchTreeNode<Integer> sortedArrayToBST(int[] nums) {
 		if (nums.length == 0) {
-            return null;
-        }
+			return null;
+		}
 		return sortedArrayToBST(nums, 0, nums.length - 1);
 	}
 	
