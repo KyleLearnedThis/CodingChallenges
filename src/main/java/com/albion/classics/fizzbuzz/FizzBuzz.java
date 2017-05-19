@@ -12,7 +12,7 @@ public class FizzBuzz {
         String[] words = {"Fizz", "Buzz", "FizzBuzz"};
         for(int i = 1; i <= n; i++){
             int x = i;
-            String current = "";
+            String current;
 
             if(x % 3 == 0 && x % 5 == 0) {
                 current = words[2];
