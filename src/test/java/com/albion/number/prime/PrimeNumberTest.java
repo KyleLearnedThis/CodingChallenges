@@ -12,7 +12,6 @@ public class PrimeNumberTest {
     @BeforeClass
     public void setUp() {
         primeNumber = new PrimeNumber();
-        primeNumber.fillSieve();
     }
 
     @DataProvider(name = "dp01")

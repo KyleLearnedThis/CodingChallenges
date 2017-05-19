@@ -7,6 +7,9 @@ public class PrimeNumber {
     public static int MAX_CHECKED_PRIME = 10000;
     boolean[] primes = new boolean[MAX_CHECKED_PRIME];
 
+    public PrimeNumber() {
+        fillSieve();
+    }
     //set up the prime sieve
     public void fillSieve() {
         Arrays.fill(primes,true);
@@ -25,11 +28,17 @@ public class PrimeNumber {
         }
     }
 
+    /**
+     * Since this can be tested
+     * @param n
+     * @return
+     */
     public boolean isPrime(int n) {
         if(n < MAX_CHECKED_PRIME){
-            fillSieve();
+            return primes[n];
+        } else {
+            throw new RuntimeException("Cannot compute this prime number since it's bigger than prime sieve");
         }
-        return primes[n];
     }
 
     boolean isPrimeV2(int n) {
