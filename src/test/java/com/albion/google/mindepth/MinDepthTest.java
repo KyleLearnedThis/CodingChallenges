@@ -1,7 +1,7 @@
 package com.albion.google.mindepth;
 
-import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.node.BinarySearchTreeNode;
+import com.albion.common.tree.utils.BinaryTreePrinter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
