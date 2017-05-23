@@ -1,7 +1,7 @@
 package com.albion.tree.heightBST;
 
-import com.albion.common.tree.BinaryTreePrinter;
 import com.albion.common.tree.node.BinarySearchTreeNode;
+import com.albion.common.tree.utils.BinaryTreePrinter;
 import org.testng.annotations.Test;
 
 public class HeightBalancedTreeTest {

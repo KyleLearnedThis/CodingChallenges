@@ -1,10 +1,10 @@
 package com.albion.graphs.highway;
 
+import com.albion.common.graph.algorithms.DijkstraV2;
 import com.albion.common.graph.core.Directions;
 import com.albion.common.graph.core.v2.Edge;
-import com.albion.common.graph.core.v2.Graph;
+import com.albion.common.graph.core.v2.GraphV2;
 import com.albion.common.graph.core.v2.Vertex;
-import com.albion.common.search.graph.DijkstraV2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class HighwayManager {
 
-    Graph<String> graph;
+    GraphV2 graph;
     /**
      * This data structure will hold a list of cities as well as the distance of each directly
      * connected city
@@ -26,7 +26,7 @@ public class HighwayManager {
      * Constructor
      */
     public HighwayManager() {
-        graph = new Graph<>();
+        graph = new GraphV2();
     }
 
     /**
@@ -136,7 +136,7 @@ public class HighwayManager {
      * 		Oakland is connected to San Jose by a 41 mile highway<br>
      *
      * Passing in San Jose and Sacramento should return 128 because the shortest distance is to go
-     * from San Jose to Oakland to Sacremento which is 41 + 87 miles.
+     * from San Jose to Oakland to Sacramento which is 41 + 87 miles.
      *
      * Note: Don't forget to write tests in TestHighwayManager.java to have good coverage for this
      * method

@@ -1,8 +1,9 @@
 package com.albion.tree.kth;
 
-import com.albion.common.tree.BinarySearchTree;
-import com.albion.common.tree.BinaryTreePrinter;
+
+import com.albion.common.tree.bst.BinarySearchTree;
 import com.albion.common.tree.node.BinarySearchTreeNode;
+import com.albion.common.tree.utils.BinaryTreePrinter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
