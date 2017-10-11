@@ -3,8 +3,6 @@ package com.albion.sort.topK.v1;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class TopKElementsTest {
     @Test
     public void testTopKFrequent() throws Exception {
@@ -12,8 +10,7 @@ public class TopKElementsTest {
         int k = 3;
         int expected = 3;
         TopKElements t = new TopKElements();
-        List<Integer> result = t.topKFrequent(input, k);
-        Assert.assertEquals(result.size(), expected);
+        int actual = t.topKFrequent(input, k);
+        Assert.assertEquals(actual, expected);
     }
-
 }
